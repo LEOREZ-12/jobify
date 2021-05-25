@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_152613) do
+ActiveRecord::Schema.define(version: 2021_05_25_143723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "offers", force: :cascade do |t|
+    t.string "job_title"
+    t.string "company_name"
+    t.string "company_street"
+    t.date "publish_date"
+    t.text "job_description"
+    t.integer "glassdoor_rate"
+    t.string "recruiter_name"
+    t.string "recruiter_email"
+    t.string "recruiter_phone_number"
+    t.string "company_city"
+    t.string "company_zipcode"
+    t.integer "salary"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,6 +40,9 @@ ActiveRecord::Schema.define(version: 2021_05_24_152613) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
