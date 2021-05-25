@@ -10,10 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_143723) do
+ActiveRecord::Schema.define(version: 2021_05_25_150723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applies", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "offer_id", null: false
+    t.date "application_date"
+    t.string "status"
+    t.string "salary_expectation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["offer_id"], name: "index_applies_on_offer_id"
+    t.index ["user_id"], name: "index_applies_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "apply_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["apply_id"], name: "index_comments_on_apply_id"
+  end
 
   create_table "offers", force: :cascade do |t|
     t.string "job_title"
@@ -32,6 +52,17 @@ ActiveRecord::Schema.define(version: 2021_05_25_143723) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "steps", force: :cascade do |t|
+    t.string "name"
+    t.date "date"
+    t.boolean "completed", default: false
+    t.integer "position"
+    t.bigint "apply_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["apply_id"], name: "index_steps_on_apply_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -47,4 +78,8 @@ ActiveRecord::Schema.define(version: 2021_05_25_143723) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "applies", "offers"
+  add_foreign_key "applies", "users"
+  add_foreign_key "comments", "applies"
+  add_foreign_key "steps", "applies"
 end
