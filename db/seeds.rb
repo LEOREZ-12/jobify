@@ -11,7 +11,7 @@ puts "Creating user..."
   first_name: "Nicolas", last_name: "Sarkozy", address: "84 Avenue de la République, Paris"
   })
   file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622041241/sarko.jpg')
-  # nicolas.photo_avatar.attach(io: file, filename: 'sarko.jpg', content_type: 'image/jpg')
+  nicolas.photo_avatar.attach(io: file, filename: 'sarko.jpg', content_type: 'image/jpg')
   nicolas.save!
 
   puts "User finished!"
@@ -27,7 +27,7 @@ puts "Creating offers..."
   })
 
   file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035931/blablacar.svg')
-  # blablacar.company_logo.attach(io: file, filename: 'blablacar.svg', content_type: 'image/svg')
+  blablacar.company_logo.attach(io: file, filename: 'blablacar.svg', content_type: 'image/svg')
   blablacar.save!
 
   back_market = Offer.new({ job_title: "Product Owner", company_name: "Back Market", 
@@ -38,7 +38,7 @@ puts "Creating offers..."
   })
 
   file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034899/back_market.png')
-  # back_market.company_logo.attach(io: file, filename: 'back_market.png', content_type: 'image/png')
+  back_market.company_logo.attach(io: file, filename: 'back_market.png', content_type: 'image/png')
   back_market.save!
 
   deezer = Offer.new({ job_title: "Product Owner Senior", company_name: "Deezer", 
@@ -49,7 +49,7 @@ puts "Creating offers..."
   })
 
   file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034727/deezer.svg')
-  # deezer.company_logo.attach(io: file, filename: 'deezer.svg', content_type: 'image/svg')
+  deezer.company_logo.attach(io: file, filename: 'deezer.svg', content_type: 'image/svg')
   deezer.save!
 
   mano_mano = Offer.new({ job_title: "Product Manager", company_name: "ManoMano", 
@@ -60,7 +60,7 @@ puts "Creating offers..."
   })
 
   file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035024/mano_mano.png')
-  # mano_mano.company_logo.attach(io: file, filename: 'mano_mano.png', content_type: 'image/png')
+  mano_mano.company_logo.attach(io: file, filename: 'mano_mano.png', content_type: 'image/png')
   mano_mano.save!
 
   alan = Offer.new({ job_title: "Product Owner / PM", company_name: "Alan", 
@@ -71,7 +71,7 @@ puts "Creating offers..."
   })
 
   file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034662/alan.png')
-  # alan.company_logo.attach(io: file, filename: 'alan.png', content_type: 'image/png')
+  alan.company_logo.attach(io: file, filename: 'alan.png', content_type: 'image/png')
   alan.save!
 
   ab_tasty = Offer.new({ job_title: "Product Owner / PM", company_name: "AB Tasty", 
@@ -82,7 +82,7 @@ puts "Creating offers..."
   })
 
   file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035143/ab-tasty.png')
-  # ab_tasty.company_logo.attach(io: file, filename: 'ab-tasty.png', content_type: 'image/png')
+  ab_tasty.company_logo.attach(io: file, filename: 'ab-tasty.png', content_type: 'image/png')
   ab_tasty.save!
 
   qonto = Offer.new({ job_title: "Product Owner / PM", company_name: "Qonto", 
@@ -93,7 +93,7 @@ puts "Creating offers..."
   })
 
   file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035212/qonto.jpg')
-  # qonto.company_logo.attach(io: file, filename: 'qonto.jpg', content_type: 'image/jpg')
+  qonto.company_logo.attach(io: file, filename: 'qonto.jpg', content_type: 'image/jpg')
   qonto.save!
 
 puts "Offers finished!"
