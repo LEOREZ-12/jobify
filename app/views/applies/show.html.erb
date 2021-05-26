@@ -1,0 +1,15 @@
+<h1>Page de show</h1>
+<div class="container-offer offset-2">
+  <div class="card-offer">
+    <img src="https://www.silicon.fr/wp-content/uploads/2012/08/Nouveau-Logo-Microsoft-%C2%A9-Microsoft-645x513.jpg" />
+    <div id="card-dispatch">
+      <div class="card-offer-infos">
+        <h5><%= @offer.company_name %></h5>
+        <h3><%= @offer.job_title %></h3>
+
+        <p>CDI &nbsp  •  &nbsp  <%= @offer.company_city %>   &nbsp  •  &nbsp   Publié le : <%= @offer.publish_date %></p>
+      </div>
+        <div class="money"><i class="fas fa-coins"></i>&nbsp<%= @offer.salary %> k</div>
+    </div>
+  </div>
+</div>
