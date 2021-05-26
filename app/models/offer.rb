@@ -3,4 +3,5 @@ class Offer < ApplicationRecord
   validates :job_title, presence: true
 
   has_many :applies
+  has_one_attached :company_logo
 end
