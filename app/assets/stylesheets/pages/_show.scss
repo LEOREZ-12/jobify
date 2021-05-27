@@ -1,3 +1,7 @@
+.container-height {
+  min-height: 100vh;
+}
+
 .card-offer {
   // overflow: hidden;
   // height: 120px;
@@ -51,7 +55,7 @@ x
 
 .card-company {
   overflow: hidden;
-  height: 380px;
+  min-height: 380px;
   width: 300px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -84,4 +88,8 @@ i.fas {
 
 .container-infos {
   justify-content: space-between;
+}
+
+.steps-infos {
+  padding-top: 5px;
 }
