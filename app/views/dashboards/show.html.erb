@@ -1,12 +1,16 @@
-<h1>Bonjour <%= @user.first_name %></h1>
+<h1>Bonjour <%= current_user.first_name %></h1>
 
 <div>
-  <div> Candidatures à envoyer :
+  <div>
+    <%= link_to 'Candidatures à envoyer ', applies_path(params: { status: 'Candidature envoyée' }) %>
     <%= @candidatures.count %>
   </div>
-  <div>Entretiens à préparer :
-  <%= @entretiens.count %>
+
+  <div>
+    <%= link_to 'Entretiens à préparer :', applies_path(params: { status: 'Entretien' }) %>
+    <%= @entretiens.count %>
   </div>
+
   <div> Relances : 2
   </div>
 </div>
