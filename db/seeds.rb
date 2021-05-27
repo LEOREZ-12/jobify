@@ -1,8 +1,10 @@
 require "open-uri"
 
 puts "Cleaning database..."
-Offer.destroy_all
+Comment.destroy_all
+Step.destroy_all
 Apply.destroy_all
+Offer.destroy_all
 User.destroy_all
 
 puts "Creating user..."
@@ -141,11 +143,11 @@ puts "Applies finished!"
 # COMMENT
 
 
-comment_a = Comment.new({ content: "Poste intéressant, équipe conviviale, à suivre...", apply_id: 1, created_at: "2021-04-08", updated_at: "2021-04-09"
+comment_a = Comment.new({ content: "Poste intéressant, équipe conviviale, à suivre...", apply: apply_a, created_at: "2021-04-08", updated_at: "2021-04-09"
   })
 comment_a.save!
 
-comment_b = Comment.new({ content: "J'ai croisé le CEO à la machine à café, il est cool", apply_id: 1, created_at: "2021-04-08", updated_at: "2021-04-09"
+comment_b = Comment.new({ content: "J'ai croisé le CEO à la machine à café, il est cool", apply: apply_a, created_at: "2021-04-08", updated_at: "2021-04-09"
   })
 comment_b.save!
 
