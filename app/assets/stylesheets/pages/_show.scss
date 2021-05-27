@@ -1,5 +1,10 @@
-.container-height {
+.container-show {
   min-height: 100vh;
+  margin: auto 60px;
+}
+
+strong.blue-title {
+  color: #086788
 }
 
 .card-offer {
@@ -9,7 +14,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 800px;
+  width: 100%;
   margin: auto;
   border-radius: 5px;
 }
@@ -55,12 +60,12 @@ x
 
 .card-company {
   overflow: hidden;
-  min-height: 380px;
-  width: 300px;
+  // min-height: 380px;
+  // min-width: 300px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  padding: 10px;
+  padding: 30px 20px;
 }
 
 .money {
@@ -83,13 +88,76 @@ i.far.fa-plus-square {
 }
 
 i.fas {
-  color: $j-dark-blue;
+  color: #9cbcc7;
 }
 
 .container-infos {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .steps-infos {
-  padding-top: 5px;
+  margin-top: 8px
+}
+
+.ligne-doc {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: $j-orange;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: $j-orange;
+  color: white;
+}
+
+.comments-notes {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  width: 800px;
+  margin: auto;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+/* TEXT AREA */
+
+.grow-wrap {
+  /* easy way to plop the elements on top of each other and have them both sized based on the tallest one's height */
+  display: grid;
+}
+.grow-wrap::after {
+  /* Note the weird space! Needed to preventy jumpy behavior */
+  content: attr(data-replicated-value) " ";
+
+  /* This is how textarea text behaves */
+  white-space: pre-wrap;
+
+  /* Hidden from view, clicks, and screen readers */
+  visibility: hidden;
+}
+.grow-wrap > textarea {
+  /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+  resize: none;
+
+  /* Firefox shows scrollbar on growth, you can hide like this. */
+  overflow: hidden;
+}
+.grow-wrap > textarea,
+.grow-wrap::after {
+  /* Identical styling required!! */
+  border: 1px solid black;
+  padding: 0.5rem;
+  font: inherit;
+
+  /* Place on top of each other */
+  grid-area: 1 / 1 / 2 / 2;
 }
