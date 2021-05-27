@@ -1,28 +1,51 @@
-<h1>Bonjour <%= current_user.first_name %></h1>
+<div class="custom-container">
+  <div class="dash-header pt-4 pb-3">
+    <h1>Bonjour <%= @user.first_name %></h1>
 
-<div>
-  <div>
-    <%= link_to 'Candidatures à envoyer ', applies_path(params: { status: 'Candidature envoyée' }) %>
-    <%= @candidatures.count %>
   </div>
 
-  <div>
-    <%= link_to 'Entretiens à préparer :', applies_path(params: { status: 'Entretien' }) %>
-    <%= @entretiens.count %>
+  <div class="dash-container d-flex justify-content-between">
+    <div class="dash-left">
+      <div class="dash-category d-flex justify-content-between align-items-start pb-3">
+        <div class="btn-prepa text-align-center btn-actions">
+          <%= link_to 'Entretiens à préparer', applies_path(params: { status: 'Entretien' }) %>
+          <p class="button-style pt-1">
+          <%= @entretiens.count %>
+          </p>
+        </div>
+
+        <div class="btn-cand btn-actions">
+          <%= link_to 'Candidatures à envoyer', applies_path(params: { status: 'Candidature à envoyer' }) %>
+          <p class="button-style pt-1">
+          <%= @candidatures.count %>
+          </p>
+        </div>
+
+        <div class="btn-relance btn-actions">
+          <%= link_to 'Relances', applies_path(params: { status: 'Relances' }) %>
+          <p class="button-style pt-1">8</p>
+        </div>
+      </div>
+      
+      <div class="dash-chart">
+        <img src="https://source.unsplash.com/7F65HDP0-E0/800" alt="Chart">
+        <p>Tableau des candidates envoyées...</p>
+      </div>
+    </div>
+    
+    <div class="dash-right d-flex align-items-end flex-column">
+      <div class="calendar-1">
+        <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S">
+        <p>Cette semaine</p>
+      </div>
+
+      <div class="calendar-2">
+        <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S+1">
+        <p>La semaine prochaine</p>
+      </div>
+
+    
+    </div>
   </div>
-
-  <div> Relances : 2
-  </div>
 </div>
 
-<div>
-  semaine 1
-</div>
-
-<div>
-  semaine 2
-</div>
-
-<div>
-  graph
-</div>

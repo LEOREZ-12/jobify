@@ -1,0 +1,103 @@
+.custom-container {
+  min-height: calc(100vh - 156px);
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 25px;
+  min-height: 100vh;
+}
+
+.dash-header h1 {
+  padding-bottom: 20px;
+}
+
+.dash-left {
+  width: 60%;
+}
+
+.dash-chart img {
+  width: 100%;
+}
+
+.btn-actions {
+  width: 30%;
+  cursor: pointer;
+  p {
+    margin-bottom: 0;
+  }
+  &:hover {
+    a {
+      color: white;
+    }
+  }
+}
+
+.btn-prepa {
+  color: $j-orange;
+  border: 1px solid $j-orange;
+  padding: 19px 24px;
+  border-radius: 8px;
+  opacity: 0.8;
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.btn-prepa:hover {
+  opacity: 1;
+  color: white;
+  background-color: rgba($color: #F35B04, $alpha: 0.8);
+}
+.btn-prepa {
+  a {
+    color: $j-orange;
+  }
+}
+
+.btn-prepa p {
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.btn-cand {
+  color: $j-light-blue;
+  border: 1px solid $j-light-blue;
+  padding: 19px 24px;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.btn-cand p {
+  font-size: 35px;
+  font-weight: 800;
+}
+.btn-cand a {
+  color: $j-light-blue;
+}
+.btn-cand:hover {
+  opacity: 1;
+  color: white;
+  background-color: rgba($color: $j-light-blue, $alpha: 0.8);
+}
+
+.btn-relance {
+  color: $j-yellow;
+  border: 1px solid $j-yellow;
+  padding: 19px 24px;
+  border-radius: 8px;
+  text-align: center;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+.btn-relance p {
+  font-size: 35px;
+  font-weight: 800;
+}
+.btn-relance a {
+  color: $j-yellow;
+}
+.btn-relance:hover {
+  opacity: 1;
+  color: white !important;
+  background-color: rgba($color: $j-yellow, $alpha: 0.8);
+}
+
