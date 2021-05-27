@@ -1,34 +1,67 @@
-<h1>Bonjour <%= current_user.first_name %></h1>
+<div class="custom-container">
+  <div class="dash-header pt-4 pb-3">
+    <h1>Bonjour <%= current_user.first_name %></h1>
+  </div>
 
-<div>
-  <% @applies.each do |apply| %>
-    <div class="container-offer pt-4">
-      <div class="card-offer">
-        <img src="https://www.silicon.fr/wp-content/uploads/2012/08/Nouveau-Logo-Microsoft-%C2%A9-Microsoft-645x513.jpg" />
-        <div class="card-dispatch">
-          <div class="card-offer-infos">
-            <h5><%= apply.offer.company_name %></h5>
-            <h3><%= apply.offer.job_title %></h3>
-            <p>CDI<span class="mx-2">•</span>
-            <%= apply.offer.company_city %><span class="mx-2">•</span>
-            Publié le <%= I18n.l(apply.offer.publish_date, format: "%A %d %B %Y") %><span class="mx-2">•</span>
-            il y a <%= time_ago_in_words(apply.offer.publish_date) %></p>
-          </div>
+  <div class="dash-container d-flex justify-content-between">
+    <div class="dash-left">
+      <div class="dash-category d-flex justify-content-between align-items-start pb-3">
+
+        <div class="btn-prepa text-align-center btn-actions">
+          <%= link_to 'Entretiens à préparer', applies_path(params: { status: 'Entretien' }) %>
+            <p class="button-style pt-1">
+          <%= @entretiens.count %>
+          </p>
         </div>
-        <div class="money"><i class="fas fa-coins mx-2"></i><%= apply.offer.salary %> k</div>
+
+        <div class="btn-cand btn-actions">
+          <%= link_to 'Candidatures à envoyer', applies_path(params: { status: 'Candidature à envoyer' }) %>
+          <p class="button-style pt-1">
+            <%= @candidatures.count %>
+          </p>
+        </div>
+
+        <div class="btn-relance btn-actions">
+          <%= link_to 'Relances', applies_path(params: { status: 'Relances' }) %>
+          <p class="button-style pt-1">8</p>
+        </div>
+      </div>
+
+
+      <div class="">
+        <% @applies.each do |apply| %>
+          <div class="container-offer pt-4">
+            <div class="card-offer">
+              <img src="https://www.silicon.fr/wp-content/uploads/2012/08/Nouveau-Logo-Microsoft-%C2%A9-Microsoft-645x513.jpg" />
+              <div class="card-dispatch">
+                <div class="card-offer-infos">
+                  <h5><%= apply.offer.company_name %></h5>
+                  <h3><%= apply.offer.job_title %></h3>
+                  <p>CDI<span class="mx-2">•</span>
+                  <%= apply.offer.company_city %><span class="mx-2">•</span>
+                  Publié le <%= I18n.l(apply.offer.publish_date, format: " %d/%m/%Y") %><span class="mx-2">•</span>
+                  il y a <%= time_ago_in_words(apply.offer.publish_date) %></p>
+                </div>
+              </div>
+              <div class="money"><i class="fas fa-coins mx-2"></i><%= apply.offer.salary %> k</div>
+            </div>
+          </div>
+        <% end  %>
       </div>
     </div>
-  <% end  %>
+
+
+    <div class="dash-right d-flex align-items-end flex-column">
+        <div class="calendar-1">
+          <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S">
+          <p>Cette semaine</p>
+        </div>
+
+        <div class="calendar-2">
+          <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S+1">
+          <p>La semaine prochaine</p>
+        </div>
+      </div>
+    </div>
 </div>
 
-<div>
-  semaine 1
-</div>
-
-<div>
-  semaine 2
-</div>
-
-<div>
-  graph
-</div>
