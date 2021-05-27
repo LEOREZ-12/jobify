@@ -1,9 +1,10 @@
 require "open-uri"
 
 puts "Cleaning database..."
-Offer.destroy_all
 Apply.destroy_all
+Offer.destroy_all
 User.destroy_all
+Comment.destroy_all
 
 puts "Creating user..."
 
