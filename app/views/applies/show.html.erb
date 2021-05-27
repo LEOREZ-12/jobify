@@ -1,15 +1,79 @@
-<h1>Page de show</h1>
-<div class="container-offer offset-2">
+<div class="container-offer pt-4">
   <div class="card-offer">
     <img src="https://www.silicon.fr/wp-content/uploads/2012/08/Nouveau-Logo-Microsoft-%C2%A9-Microsoft-645x513.jpg" />
-    <div id="card-dispatch">
+    <div class="card-dispatch">
       <div class="card-offer-infos">
         <h5><%= @offer.company_name %></h5>
         <h3><%= @offer.job_title %></h3>
-
-        <p>CDI &nbsp  •  &nbsp  <%= @offer.company_city %>   &nbsp  •  &nbsp   Publié le : <%= @offer.publish_date %></p>
+        <p>CDI<span class="mx-2">•</span>
+        <%= @offer.company_city %><span class="mx-2">•</span>
+        Publié le <%= I18n.l(@offer.publish_date, format: "%A %d %B %Y") %><span class="mx-2">•</span>
+        il y a <%= time_ago_in_words(@offer.publish_date) %></p>
       </div>
-        <div class="money"><i class="fas fa-coins"></i>&nbsp<%= @offer.salary %> k</div>
     </div>
+    <div class="money"><i class="fas fa-coins mx-2"></i><%= @offer.salary %> k</div>
+  </div>
+</div>
+<br>
+<h3>Prochaine étape : Entretien prévu le jeudi 24 avril 2021 <span class="mx-2"></span>
+  <i class="far fa-edit mx-2"></i><span class="mx-2"></span>
+  <i class="far fa-plus-square"></i>
+</h3>
+<br>
+<div class="container-infos d-flex">
+  <div class="card-company">
+    <h6><strong>Localisation</strong></h6>
+    <hr>
+    <h6>
+      <i class="fas fa-map-marker-alt mr-2"></i>
+      <%= @offer.company_street%>, 
+      <%= @offer.company_city %>, 
+      <%= @offer.company_zipcode %>
+    </h6>
+    <h6>
+      <i class="fas fa-car"></i><span class="mx-1"></span> 27 min 
+      <span class="mx-1"></span>
+      <i class="fas fa-subway"></i><span class="mx-1"></span> 32 min 
+      <span class="mx-1"></span>
+      <i class="fas fa-bicycle"></i><span class="mx-1"></span> 35min
+    </h6>
+    <br>
+    <h6><strong>Contact</strong></h6>
+    <hr>
+    <h6>
+      <i class="fas fa-user"></i><span class="mx-2"></span><%= @offer.recruiter_name %>
+    </h6>
+    <h6>
+      <i class="fas fa-envelope"></i><span class="mx-2"></span><%= @offer.recruiter_email %>
+    </h6>
+    <h6>
+      <i class="fas fa-phone-alt"></i><span class="mx-2"></span>
+      <%= @offer.recruiter_phone_number %>
+    </h6>
+    <br>
+    <h6><strong>Avis</strong></h6>
+    <hr>
+    <h6>Note Glassdoor : <span class="mx-2"></span>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="far fa-star"></i>
+    </h6>
+  </div>
+  <div class="card-company">
+    <h6><strong>Ma candidature</strong></h6>
+    <hr>
+    <h6>Date de candidature:<span class="mx-1"></span> <%= @apply.application_date.strftime("%d/%m/%Y") %></h6>
+    <h6>Prétention salariale:<span class="mx-2"></span> <%= @apply.salary_expectation %>
+      <span class="mx-0.5"></span> k
+    </h6>
+    <br>
+    <h6><strong>Documents</strong></h6>
+    <hr>
+    <h6><i class="fas fa-user"></i><span class="mx-2"></span><%= @offer.recruiter_name %></h6>
+    <h6><i class="fas fa-envelope"></i><span class="mx-2"></span><%= @offer.recruiter_email %></h6>
+    <h6><i class="fas fa-phone-alt"></i><span class="mx-2"></span><%= @offer.recruiter_phone_number %></h6>
+    <br>
   </div>
 </div>

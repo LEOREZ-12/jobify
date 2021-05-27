@@ -1,11 +1,12 @@
 .card-offer {
-  overflow: hidden;
-  height: 120px;
+  // overflow: hidden;
+  // height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   width: 800px;
+  margin: auto;
   border-radius: 5px;
 }
 
@@ -32,9 +33,11 @@ x
 }
 
 .card-offer .card-offer-infos {
-  padding: 30px;
+  padding: 15px 30px;
   margin-left: 10px;
-  padding-top: 50px;
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .container-offer {
@@ -42,5 +45,43 @@ x
 }
 
 .card-dispatch {
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card-company {
+  overflow: hidden;
+  height: 380px;
+  width: 300px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.money {
+  padding: 15px;
+  align-self: flex-end;
+}
+
+i.fas.fa-coins {
+  color: $j-dark-blue;
+}
+
+i.far.fa-edit {
+  color: $j-dark-blue;
+  size: 20px;
+}
+
+i.far.fa-plus-square {
+  color: $j-dark-blue;
+  size: 20px;
+}
+
+i.fas {
+  color: $j-dark-blue;
+}
+
+.container-infos {
   justify-content: space-between;
 }
