@@ -9,5 +9,7 @@ class AppliesController < ApplicationController
     if params.dig(:status)
       @applies = @applies.where(status: params[:status])
     end
+    @candidatures = Apply.where(user: current_user)
+    @entretiens = Apply.where(user: current_user && "status" == "Entretien")
   end
 end
