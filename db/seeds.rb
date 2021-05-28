@@ -176,4 +176,8 @@ step_e = Step.new({ name: "Entretien", apply: apply_c, date: "2021-04-18"
   })
 step_e.save!
 
+step_f = Step.new({ name: "Candidature envoyée", apply: apply_a, date: "2021-04-07"
+  })
+step_f.save!
+
 puts "Steps finished!"
