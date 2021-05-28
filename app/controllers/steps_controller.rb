@@ -8,11 +8,11 @@ class StepsController < ApplicationController
   end
 
   def update
-    @apply = Apply.find(params[:apply_id])
-    @step = Step.find(params[:id])
-    authorize @step
-    @step.update(steps_params)
-    redirect_to apply_path(@apply)
+    # @apply = Apply.find(params[:apply_id])
+    # @step = Step.find(params[:id])
+    # authorize @step
+    # @step.update(steps_params)
+    # redirect_to apply_path(@apply)
   end
 
   private
