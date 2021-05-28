@@ -27,8 +27,7 @@
       </div>
 
       <div class="dash-chart">
-        <img src="https://source.unsplash.com/7F65HDP0-E0/800" alt="Chart">
-        <p>Tableau des candidates envoyées...</p>
+      <%= column_chart @applies.group(:status).count, colors: ["#06AED5", "#F35B04"], label: "Value", height: "500px" %>
       </div>
 
     </div>
