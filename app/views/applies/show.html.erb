@@ -18,7 +18,7 @@
 </div>
 
 <div class="color-container">
-  <div class="container-show">
+  <div class="container-show pb-3">
     <div class="container-offer pt-4">
     </div>
     <br>
@@ -62,14 +62,16 @@
           <i class="far fa-star"></i>
         </h6>
       </div>
-      <div class="steps-infos px-4 col-4 pt-4 ">
+      <div class="steps-infos px-3 col-4 pt-4 ">
         <h6><strong>Etape en cours : </strong></h6>
         <hr>
-          <h6 class="next-step">
-            <%= @apply.steps.last.name %> le <%= @apply.steps.last.date.strftime("%d/%m/%Y") %>       
-            <button class='btn btn-link btn-lg px-1' id="btn-chiant" type="button" data-toggle="collapse" data-target="#collapseStep" aria-expanded="false" aria-controls="collapseStep"> <i class="far fa-edit mx-1"></i></button>
-            <button class='btn btn-link btn-lg px-1' type="button" data-toggle="collapse" data-target="#collapseStep" aria-expanded="false" aria-controls="collapseStep"><i class="far fa-plus-square"></i></button>
-          </h6>
+          <% if @apply.steps.present? %>
+            <h6 class="next-step">
+              <%= @apply.steps.last.name %> le <%= @apply.steps.last.date.strftime("%d/%m/%Y") %>       
+              <button class='btn btn-link btn-lg px-1' id="btn-chiant" type="button" data-toggle="collapse" data-target="#collapseStep" aria-expanded="false" aria-controls="collapseStep"> <i class="far fa-edit mx-1"></i></button>
+              <button class='btn btn-link btn-lg px-1' type="button" data-toggle="collapse" data-target="#collapseStep" aria-expanded="false" aria-controls="collapseStep"><i class="far fa-plus-square"></i></button>
+            </h6>
+          <% end %>
           <div class="collapse" id="collapseStep">
             <%= simple_form_for [@apply, @step] do |f| %>
               <%= f.input :name, label: false,  collection: Step::NAMES %>
@@ -81,7 +83,7 @@
         <h6><strong>Historique</strong></h6>
         <hr>
         <div class="d-flex flex-column w-100">
-          <% @apply.steps.each do |step|%>
+          <% @apply.steps[0...-1].each do |step|%>
             <p class="mb-0"><%= step.date.strftime("%d/%m/%Y") %> - <%= step.name %></p>
           <% end %>
         </div>
@@ -113,6 +115,8 @@
       </div>
     </div>
     <div class="comments-notes d-flex p-4 flex-column mb-5 ">
+      <h6><strong class="blue-title">Vos notes</strong></h6>
+      <hr>
       <%= simple_form_for Comment.new, url: apply_comments_path(@apply), method: :post, html: { class: 'w-100' } do |f| %>
         <div class="add-comment d-flex w-100 align-items-end justify-content-between form-group mb-3">
           <%= f.input :content, label: false, placeholder: "    Ajouter un commentaire ici ...", wrapper_html: { class: 'flex-grow-1 mb-0 mr-4 grow-wrap ' }, input_html: { class: 'mb-0 rounded-pill'} %>
@@ -124,6 +128,11 @@
           <p class="mb-0"><%= comment.created_at.strftime("%d/%m/%Y") %> - <%= comment.content %></p>
         <% end %>
       </div>
+    </div>
+    <div class="comments-notes d-flex p-4 flex-column mb-5 ">
+      <h6><strong class="blue-title">Descriptif du poste</strong></h6>
+      <hr>
+        <p><%=  @offer.job_description%></p>
     </div>
   </div>
 </div>

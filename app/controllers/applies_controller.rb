@@ -16,4 +16,5 @@ class AppliesController < ApplicationController
     @entretiens = @applies_user.where(status: "Entretien")
     @candidatures = Apply.where(status: "A postuler")
   end
+
 end
