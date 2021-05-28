@@ -1,7 +1,6 @@
-
-<div class="container-show">
-  <div class="container-offer pt-4">
-    <div class="card-offer">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/bsm/image/upload/v1622189287/banner-bla.jpg);">
+  <div class="show-container">
+    <div class="card-offer-banner">
       <%= cl_image_tag @offer.company_logo.key, height: 300, width: 400, crop: :fill %>
       <div class="card-dispatch">
         <div class="card-offer-infos">
@@ -16,10 +15,16 @@
       <div class="money"><i class="fas fa-coins mx-2"></i><%= @offer.salary %> k</div>
     </div>
   </div>
+</div>
+
+<div class="color-container">
+  <div class="container-show">
+  <div class="container-offer pt-4">
+  </div>
   <br>
   <br>
   <div class="container-infos row mx-0">
-    <div class="card-company col-4">
+    <div class="card-company">
       <h6><strong class="blue-title">Localisation</strong></h6>
       <hr>
       <h6>
@@ -61,7 +66,7 @@
     <div class="steps-infos px-4 col-4 ">
       <h6><strong>Prochaine étape : </strong></h6>
       <hr>
-        <h6>
+        <h6 class="next-step">
         <%= @apply.status %> le jeudi 24 avril 2021 <span class="mx-1"></span>
         <i class="far fa-edit mx-1"></i><span class="mx-1"></span>
         <i class="far fa-plus-square"></i>
@@ -73,7 +78,7 @@
       <h6>Etape à préciser ajouté le <%= @apply.created_at.strftime("%d/%m/%Y") %></h6> 
       <h6>Candidature envoyée le <%= @apply.application_date.strftime("%d/%m/%Y") %></h6> 
     </div>
-    <div class="card-company d-flex flex-column justify-content-between align-items-center col-4">
+    <div class="card-company d-flex flex-column justify-content-between align-items-center">
       <div class="w-100">
         <h6><strong class="blue-title">Ma candidature</strong></h6>
         <hr>
@@ -109,5 +114,8 @@
       <% end %>
     </div>
   </div>
+</div>
+
+
 </div>
 
