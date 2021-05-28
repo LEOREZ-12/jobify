@@ -18,7 +18,7 @@ puts "Creating user..."
 
   puts "User finished!"
 
-# APPLIES
+# OFFERS
 
 puts "Creating offers..."
   blablacar = Offer.new({ job_title: "Product Owner Senior", company_name: "BlaBlaCar",
@@ -152,3 +152,28 @@ comment_b = Comment.new({ content: "J'ai croisé le CEO à la machine à café, 
 comment_b.save!
 
 puts "Comments finished!"
+
+
+# STEPS
+
+step_a = Step.new({ name: "A postuler", apply: apply_a, date: "2021-04-06"
+  })
+step_a.save!
+
+step_b = Step.new({ name: "A postuler", apply: apply_c, date: "2021-04-09"
+  })
+step_b.save!
+
+step_c = Step.new({ name: "Candidature envoyée", apply: apply_c, date: "2021-04-12"
+  })
+step_c.save!
+
+step_d = Step.new({ name: "Echange téléphonique", apply: apply_c, date: "2021-04-13"
+  })
+step_d.save!
+
+step_e = Step.new({ name: "Entretien", apply: apply_c, date: "2021-04-18"
+  })
+step_e.save!
+
+puts "Steps finished!"
