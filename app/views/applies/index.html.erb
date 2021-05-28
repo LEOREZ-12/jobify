@@ -32,7 +32,7 @@
         <% @applies.each do |apply| %>
           <div class="container-offer pt-4">
             <div class="card-offer">
-              <img src="https://www.silicon.fr/wp-content/uploads/2012/08/Nouveau-Logo-Microsoft-%C2%A9-Microsoft-645x513.jpg" />
+              <%= cl_image_tag apply.offer.company_logo.key, height: 300, width: 400, crop: :fill %>
               <div class="card-dispatch">
                 <div class="card-offer-infos">
                   <h5><%= apply.offer.company_name %></h5>
