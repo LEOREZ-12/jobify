@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   def create
+    @apply = Apply.find(params[:apply_id])
     @comment = Comment.new(comment_params)
+    @comment.apply = @apply
+    @comment.save
+    redirect_to apply_path(@apply)
   end
 
   private

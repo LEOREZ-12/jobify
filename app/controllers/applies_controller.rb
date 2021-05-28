@@ -2,6 +2,7 @@ class AppliesController < ApplicationController
   def show
     @apply = Apply.find(params[:id])
     @offer = @apply.offer
+    @step = Step.new
   end
 
   def index
