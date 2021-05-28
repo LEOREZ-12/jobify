@@ -1,0 +1,85 @@
+.banner {
+  background-size: cover;
+  background-position: top;
+  padding: 70px 0;
+}
+
+.color-container {
+  background-color: #086788;
+  color: white;
+}
+
+.card-offer-banner {
+  // overflow: hidden;
+  // height: 120px;
+  // box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  color: white;
+  align-items: center;
+  width: 51%;
+  margin: auto;
+  border-radius: 5px;
+  padding-top: 160px;
+}
+
+.card-offer-banner img {
+  height: 100%;
+  width: 120px;
+  object-fit: contain;
+  background-color: white;
+  margin: 5px;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.card-offer-banner h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-offer p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-offer .card-offer-infos {
+  padding: 15px 30px;
+  margin-left: 10px;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.container-offer {
+  align-items: center;
+}
+
+.card-dispatch {
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.card-company {
+  overflow: hidden;
+  // min-height: 380px;
+  // min-width: 300px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 30px 20px;
+  width: 27%;
+}
+
+.next-step {
+  font-size: 20px;
+  font-weight: 700;
+  color: #F7FFF7;
+}
+
+.blue-title {
+  font-size: 22px;
+}
