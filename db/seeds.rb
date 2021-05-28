@@ -134,7 +134,7 @@ apply_f = Apply.new({ user: nicolas, offer: ab_tasty, application_date: "2021-04
 apply_f.save!
 
 apply_g = Apply.new({ user: nicolas, offer: qonto, application_date: "2021-04-22", created_at: "2021-05-07", updated_at: "2021-05-07",
-              status: "Echange téléphonique", salary_expectation: ""
+              status: "A postuler", salary_expectation: ""
 })
 apply_g.save!
 
