@@ -70,6 +70,7 @@ x
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
   padding: 30px 20px;
+  color: $j-gray11;
 }
 
 .money {
@@ -82,12 +83,12 @@ i.fas.fa-coins {
 }
 
 i.far.fa-edit {
-  color: $j-dark-blue;
+  color: $j-yellow;
   size: 20px;
 }
 
 i.far.fa-plus-square {
-  color: $j-dark-blue;
+  color: $j-yellow;
   size: 20px;
 }
 
@@ -100,7 +101,9 @@ i.fas {
 }
 
 .steps-infos {
-  margin-top: 8px
+  padding-top: 5px;
+  margin-top: 8px;
+
 }
 
 .ligne-doc {
@@ -130,6 +133,8 @@ i.fas {
   margin: auto;
   border-radius: 5px;
   margin-top: 30px;
+  color: $j-gray11;
+
 }
 
 /* TEXT AREA */
@@ -165,3 +170,4 @@ i.fas {
   /* Place on top of each other */
   grid-area: 1 / 1 / 2 / 2;
 }
+
