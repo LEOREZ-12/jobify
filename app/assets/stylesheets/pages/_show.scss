@@ -1,6 +1,7 @@
 .container-show {
   min-height: 100vh;
   margin: auto 100px;
+  padding-top: 5px
 }
 
 strong.blue-title {
@@ -11,6 +12,11 @@ strong.blue-title {
   position: relative;
   bottom: 1px;
 }
+
+.btn.btn-link.btn-lg.px-1 {
+  font-size: larger;
+}
+
 
 .card-offer {
   // overflow: hidden;
@@ -53,8 +59,17 @@ x
   }
 }
 
-.container-offer {
+.container-step {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  color: $j-gray11;
+  margin: 0px 5px;
+  padding: 10px 10px;
   align-items: center;
+  color: #086788;
+  font-weight: 200!important;
 }
 
 .card-dispatch {
@@ -71,6 +86,18 @@ x
   border-radius: 5px;
   padding: 30px 20px;
   color: $j-gray11;
+  max-height: 100vh;
+}
+
+.card-candidature {
+  overflow: hidden;
+  // min-height: 380px;
+  // min-width: 300px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 30px 20px;
+  color: $j-gray11;
 }
 
 .money {
@@ -79,17 +106,17 @@ x
 }
 
 i.fas.fa-coins {
-  color: $j-dark-blue;
+  color: white;
 }
 
-i.far.fa-edit {
-  color: $j-yellow;
+i.fas.fa-pen {
+  color: $j-orange;
   size: 20px;
 }
 
-i.far.fa-plus-square {
-  color: $j-yellow;
-  size: 20px;
+i.fas.fa-plus-circle {
+  color: $j-orange;
+  size: 5px;
 }
 
 i.fas {
@@ -97,13 +124,17 @@ i.fas {
 }
 
 .container-infos {
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .steps-infos {
   padding-top: 5px;
   margin-top: 8px;
 
+}
+
+#step-font {
+  font-family: 'Questrial', serif;
 }
 
 .ligne-doc {
@@ -124,17 +155,25 @@ i.fas {
   color: white;
 }
 
+.a {
+  color: $j-orange;
+}
+
 .comments-notes {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   width: 800px;
-  margin: auto;
   border-radius: 5px;
-  margin-top: 30px;
   color: $j-gray11;
+}
 
+#new_step {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* TEXT AREA */
