@@ -3,6 +3,7 @@ class AppliesController < ApplicationController
     @apply = Apply.find(params[:id])
     @offer = @apply.offer
     @step = Step.new
+    @last_step = @apply.steps.last
   end
 
   def index

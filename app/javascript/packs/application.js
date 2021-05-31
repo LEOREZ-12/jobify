@@ -35,6 +35,14 @@ document.addEventListener('turbolinks:load', () => {
   growTextarea();
 });
 
-import "chartkick/chart.js";
+
+import "chartkick/chart.js"
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
+initFlatpickr();
+
+
 import "fullcalendar/main.js";
+
 

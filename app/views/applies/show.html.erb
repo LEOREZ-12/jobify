@@ -17,119 +17,136 @@
   </div>
 </div>
 
-<div class="color-container">
-  <div class="container-show pb-3">
-    <div class="container-offer pt-4">
-    </div>
+<div class="color-container bg-grey">
+  <div class="container-show">
+    <div class="container-step mt-4">
+      <div class="d-flex justify-content-between">
+        <div class="pt-3 mx-3">
+          <h3 id="step-font"> Etape en cours :<span class="mx-2"></span>
+          <% if @apply.steps.present? %>
+            <strong class="orange-title"><%= @apply.steps.last.name %></strong><span class="mx-2"></span>le<span class="mx-2"></span><strong class="orange-title"><%= I18n.l(@apply.steps.last.date, format: "%A %d %B %Y") %></strong>        
+          <% end %>
+          </h3>
+        </div>
+        <div class="pr-4">
+          <h3>
+            <a class="btn btn-outline-warning mt-3 mx-2 rounded-pill" id="btn-chiant" type="button" data-toggle="collapse" data-target="#collapseStepModif" aria-expanded="false" aria-controls="collapseStepModif">Modifier</a>
+            <a class="btn btn-outline-warning mt-3 mx-2 rounded-pill" type="button" data-toggle="collapse" data-target="#collapseStep" aria-expanded="false" aria-controls="collapseStep">Nouvelle étape</a>
+          </h3>
+        </div>        
+      </div>
+      <div class="collapse" id="collapseStepModif">
+          <hr>
+          <div class="edit-form">
+            <%= simple_form_for @last_step do |f| %>
+              <%= f.input :name, label: "Choisissez la nouvelle étape",  collection: Step::NAMES %>
+              <div class="logo-calendar">
+                <%= f.input :date, label: "Indiquez la date butoire",  as: :date, html5: true, input_html: {class: "datepicker"} %><i class="far fa-calendar-alt"></i>
+              </div>
+              <%= f.submit "Valider", class: "btn btn-outline-warning rounded-pill modif"%>
+            <% end %>
+            <br>
+          </div>
+      </div>
+      <div class="collapse" id="collapseStep">
+          <hr>
+          <%= simple_form_for [@apply, @step] do |f| %>
+            <%= f.input :name, label: "Choisissez la nouvelle étape",  collection: Step::NAMES %>
+            <div class="logo-calendar">
+              <%= f.input :date, label: "Indiquez la date butoire",  as: :date, html5: true, input_html: {class: "datepicker"} %><i class="far fa-calendar-alt"></i>
+            </div>
+            <%= f.submit "Valider", class: "btn btn-outline-warning rounded-pill"%>
+          <% end %>
+          <br>
+      </div>
+    </div> 
     <br>
     <br>
     <div class="container-infos row mx-0">
-      <div class="card-company">
-        <h6><strong class="blue-title">Localisation</strong></h6>
-        <hr>
-        <h6>
-          <%= @offer.company_street%>, 
-          <%= @offer.company_city %>, 
-          <%= @offer.company_zipcode %>
-        </h6>
-        <h6>
-          <i class="fas fa-car"></i><span class="mx-1"></span> 27 min 
-          <span class="mx-1"></span>
-          <i class="fas fa-subway"></i><span class="mx-1"></span> 32 min 
-          <span class="mx-1"></span>
-          <i class="fas fa-bicycle"></i><span class="mx-1"></span> 35min
-        </h6>
-        <br>
-        <h6><strong class="blue-title">Contact</strong></h6>
-        <hr>
-        <h6>
-          <i class="fas fa-user"></i><span class="mr-3"></span><%= @offer.recruiter_name %>
-        </h6>
-        <h6>
-          <i class="fas fa-envelope"></i><span class="mr-3"></span><%= @offer.recruiter_email %>
-        </h6>
-        <h6>
-          <i class="fas fa-phone-alt"></i><span class="mr-3"></span><%= @offer.recruiter_phone_number %>
-        </h6>
-        <br>
-        <h6><strong class="blue-title">Avis</strong></h6>
-        <hr>
-        <h6>Note Glassdoor : <span class="mx-2"></span>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="far fa-star"></i>
-        </h6>
-      </div>
-      <div class="steps-infos px-3 col-4 pt-4 ">
-        <h6><strong>Etape en cours : </strong></h6>
-        <hr class="color-white">
-          <% if @apply.steps.present? %>
-            <h6 class="next-step">
-              <%= @apply.steps.last.name %> le <%= @apply.steps.last.date.strftime("%d/%m/%Y") %>       
-              <button class='btn btn-link btn-lg px-1' id="btn-chiant" type="button" data-toggle="collapse" data-target="#collapseStep" aria-expanded="false" aria-controls="collapseStep"> <i class="far fa-edit mx-1"></i></button>
-              <button class='btn btn-link btn-lg px-1' type="button" data-toggle="collapse" data-target="#collapseStep" aria-expanded="false" aria-controls="collapseStep"><i class="far fa-plus-square"></i></button>
-            </h6>
+      <div class="col-8 mb-4 ">
+        <div class="comments-notes d-flex p-4 flex-column mb-4 ">
+          <h6><strong class="blue-title">Historique</strong></h6><hr>
+          <ul>
+            <% @apply.steps[0...-1].each do |step|%>
+            <li class="<%= step.name %>"><p class="mb-0 step-date"><%= step.date.strftime("%d/%m/%Y") %></p><p class="step-name m-0"><%= step.name %></p></li> 
+            <% end %>
+          </ul>
+        </div>
+         <div class="comments-notes d-flex p-4 flex-column mb-4 ">
+          <h6><strong class="blue-title">Vos notes</strong></h6>
+          <hr>
+          <%= simple_form_for Comment.new, url: apply_comments_path(@apply), method: :post, html: { class: 'w-100' } do |f| %>
+            <div class="add-comment d-flex w-100 align-items-end justify-content-between form-group mb-3">
+              <%= f.input :content, label: false, placeholder: "    Ajouter vos notes ici ...", wrapper_html: { class: 'flex-grow-1 mb-0 mr-4 grow-wrap ' }, input_html: { class: 'mb-0 rounded-pill'} %>
+              <%= f.submit "Ajouter", class: "btn btn-flat rounded-pill" %> 
+            </div>
           <% end %>
-          <div class="collapse" id="collapseStep">
-            <%= simple_form_for [@apply, @step] do |f| %>
-              <%= f.input :name, label: false,  collection: Step::NAMES %>
-              <%= f.input :date, label: false,  as: :date, html5: true %>
-              <%= f.submit "Valider", class: "btn btn-flat"%>
+          <div class="d-flex flex-column w-100">
+            <% @apply.comments.each do |comment|%>
+              <p class="mb-0"><%= comment.created_at.strftime("%d/%m/%Y") %> - <%= comment.content %></p>
             <% end %>
           </div>
-        <br>
-        <h6><strong>Historique</strong></h6>
-        <hr class="color-white">
-        <div class="d-flex flex-column w-100">
-          <% @apply.steps[0...-1].each do |step|%>
-            <p class="mb-0"><%= step.date.strftime("%d/%m/%Y") %> - <%= step.name %></p>
-          <% end %>
-        </div>
-      </div>
-      <div class="card-company d-flex flex-column justify-content-between align-items-center">
-        <div class="w-100">
-          <h6><strong class="blue-title">Ma candidature</strong></h6>
+        </div> 
+        <div class="comments-notes d-flex p-4 flex-column mb-4 ">
+          <h6><strong class="blue-title">Descriptif du poste</strong></h6>
           <hr>
-          <h6>Date de candidature:<span class="mx-1"></span> <%= @apply.application_date.strftime("%d/%m/%Y") %></h6>
-          <h6>Prétention salariale:<span class="mx-2"></span> <%= @apply.salary_expectation %>
-            <span class="mx-0.5"></span> k
+          <p><%=  @offer.job_description%></p>
+        </div>
+      </div> 
+      <div class="col-3 mb-4">
+        <div class="card-company mb-4">
+          <h6><strong class="blue-title">Localisation</strong></h6>
+          <hr>
+          <h6>
+            <%= @offer.company_street%>, 
+            <%= @offer.company_city %>, 
+            <%= @offer.company_zipcode %>
+          </h6>
+          <h6>
+            <i class="fas fa-car"></i><span class="mx-1"></span> 27 min 
+            <span class="mx-1"></span>
+            <i class="fas fa-subway"></i><span class="mx-1"></span> 32 min 
+            <span class="mx-1"></span>
+            <i class="fas fa-bicycle"></i><span class="mx-1"></span> 35min
           </h6>
           <br>
-          <h6><strong class="blue-title">Documents</strong></h6>
+          <h6><strong class="blue-title">Contact</strong></h6>
+          <hr>
+          <h6>
+            <i class="fas fa-user"></i><span class="mr-3"></span><%= @offer.recruiter_name %>
+          </h6>
+          <h6>
+            <i class="fas fa-envelope"></i><span class="mr-3"></span><%= @offer.recruiter_email %>
+          </h6>
+          <h6>
+            <i class="fas fa-phone-alt"></i><span class="mr-3"></span><%= @offer.recruiter_phone_number %>
+          </h6>
+          <br>
+          <h6><strong class="blue-title">Avis</strong></h6>
+          <hr>
+          <h6>Note Glassdoor : <span class="mx-2"></span>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="far fa-star"></i>
+          </h6>
+        </div>
+        <div class="card-candidature mb-4">
+          <h6><strong class="blue-title">Ma candidature</strong></h6>
           <hr>
           <div class="ligne-doc">
-            <h6><i class="fas fa-file"></i><span class="mr-1"></span>CV : nicolas.cv.pdf</h6>
+            <h6>CV :<span class="mr-1"></span>nicolas.cv.pdf</h6>
             <div><span class="mr-2"></span><i class="fas fa-eye"></i></div>
           </div>
           <div class="ligne-doc">
-            <h6><i class="fas fa-file"></i><span class="mr-1"></span>LM : nicolas.lettre_de_motiv.pdf</h6>
+            <h6>LM :<span class="mr-1"></span>nicolas.lettre_de_motiv.pdf</h6>
             <div><span class="mr-2"></span><i class="fas fa-eye"></i></div>
           </div>
+          <br>
+          <%= link_to "Ajouter un document", "#", class: "btn btn-outline-warning mt-auto d-flex justify-content-center rounded-pill mx-3" %>
         </div>
-          <%= link_to "Ajouter un document", "#", class: "btn btn-outline-warning mt-auto mx-3 rounded-pill" %>
-      </div>
-    </div>
-    <div class="comments-notes d-flex p-4 flex-column mb-5 ">
-      <h6><strong class="blue-title">Vos notes</strong></h6>
-      <hr>
-      <%= simple_form_for Comment.new, url: apply_comments_path(@apply), method: :post, html: { class: 'w-100' } do |f| %>
-        <div class="add-comment d-flex w-100 align-items-end justify-content-between form-group mb-3">
-          <%= f.input :content, label: false, placeholder: "    Ajouter vos notes ici ...", wrapper_html: { class: 'flex-grow-1 mb-0 mr-4 grow-wrap ' }, input_html: { class: 'mb-0 rounded-pill'} %>
-          <%= f.submit "Ajouter", class: "btn btn-flat rounded-pill" %> 
-        </div>
-      <% end %>
-      <div class="d-flex flex-column w-100">
-        <% @apply.comments.each do |comment|%>
-          <p class="mb-0"><%= comment.created_at.strftime("%d/%m/%Y") %> - <%= comment.content %></p>
-        <% end %>
-      </div>
-    </div>
-    <div class="comments-notes d-flex p-4 flex-column mb-5 ">
-      <h6><strong class="blue-title">Descriptif du poste</strong></h6>
-      <hr>
-        <p><%=  @offer.job_description%></p>
+      </div>      
     </div>
   </div>
 </div>
