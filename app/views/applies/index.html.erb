@@ -57,7 +57,7 @@
         <% @applies.each do |apply| %>
           <div class="container-offer pt-4">
             <div class="card-offer">
-              <%= cl_image_tag apply.offer.company_logo.key, height: 300, width: 400, crop: :fill %>
+              <%= cl_image_tag apply.offer.company_logo.key, height: 300, width: 400 %>
               <div class="card-dispatch">
                 <div class="card-offer-infos">
                   <h5><%= apply.offer.company_name %></h5>
@@ -68,7 +68,7 @@
                   il y a <%= time_ago_in_words(apply.offer.publish_date) %></p>
                 </div>
               </div>
-              <h2 class="status-label"><%= apply.status %></h2>
+              <h2 class="status-label <%= apply.status %>"> <%= apply.status %></h2>
               <div class="money"><i class="fas fa-coins mx-2"></i><%= apply.offer.salary %> k</div>
             </div>
           </div>

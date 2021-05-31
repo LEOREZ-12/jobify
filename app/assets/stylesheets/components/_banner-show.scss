@@ -56,6 +56,7 @@
 
 .container-offer {
   align-items: center;
+
 }
 
 .card-dispatch {
@@ -84,17 +85,90 @@
   font-size: 22px;
 }
 
-.status-label {
-  background-color: #06AED5;
-  color: white;
-  font-size: 10px !important;
-  line-height: 12px !important;
-  border-radius: 4px !important;
-  display: inline-block !important;
-  font-weight: 800 !important;
-  padding: 6px 8px !important;
-  text-transform: uppercase !important;
-  position: absolute;
-  top: 10px;
-  right: 16px;
+
+.card-offer {
+
+  h2.status-label {
+    background-color: #06AED5;
+    color: white;
+    font-size: 10px ;
+    line-height: 12px ;
+    border-radius: 4px ;
+    font-weight: 800 ;
+    padding: 6px 8px ;
+    text-transform: uppercase ;
+    position: absolute;
+    top: 25px;
+    right: 32px;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+
+    &:before {
+      content: "";
+      height: 10px;
+      width: 10px;
+      color: white;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      margin-right: 8px;
+    }
+
+    &.A.postuler {
+      &:before {
+        background: $j-light-blue;
+        content:"\f02e";
+      }
+    }
+
+    &.Candidature.envoyée {
+      &:before {
+        background: $j-light-blue;
+        content: "\f1d8";
+      }
+    }
+
+    &.Proposition.recevoir {
+      &:before {
+        background: $j-light-blue;
+        content: "\f573";
+      }
+    }
+    &.Entretien {
+      &:before {
+        background: $j-light-blue;
+        content: "\f2b5";
+      }
+    }
+
+    &.Echange.téléphonique {
+      &:before {
+        background: $j-light-blue;
+        content: "\f2a0";
+      }
+    }
+    &.Refus.du.recruteur {
+      &:before {
+        background: red;
+        content: "\f057";
+      }
+    }
+    &.Refus.du.candidat {
+      &:before {
+        background: red;
+        content: "\f057";
+      }
+    }
+    &.Proposition.acceptée {
+      &:before {
+        background: greenyellow;
+        content: "\f058";
+      }
+    }
+  }
 }
