@@ -15,11 +15,24 @@ class AppliesController < ApplicationController
     @allexceptdeclined = @allapplies_user.where("status NOT LIKE :prefix", prefix: "Refus%")
     @reminders = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day)
     @applies = current_user.applies
+
+    @status = params[:status]
+
     if params.dig(:status) == "reminder"
       @applies = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day)
     elsif params.dig(:status)
       @applies = @applies.where("status LIKE :prefix", prefix: "#{params[:status]}%")
     end
   end
-end
 
+  private
+  def transform_status(status)
+    if status == "A postuler"
+      "a_postuler"
+    elsif status == "Proposition à recevoir"
+      "recevoir_proposition"
+    elsif status == "Refus"
+      "refus"
+    end
+  end
+end
