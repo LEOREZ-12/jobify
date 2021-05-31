@@ -1,11 +1,15 @@
 .container-show {
   min-height: 100vh;
   margin: auto 100px;
-  padding-top: 5px
+  padding-top: 5px;
 }
 
 strong.blue-title {
   color: #086788
+}
+
+strong.orange-title {
+  color:$j-orange;
 }
 
 #btn-chiant {
@@ -17,6 +21,10 @@ strong.blue-title {
   font-size: larger;
 }
 
+.col-3.mb-4 {
+  position: sticky;
+  top: 0;
+}
 
 .card-offer {
   // overflow: hidden;
@@ -86,7 +94,8 @@ x
   border-radius: 5px;
   padding: 30px 20px;
   color: $j-gray11;
-  max-height: 100vh;
+  min-height: 450px;
+  min-width: 300px;
 }
 
 .card-candidature {
@@ -98,6 +107,8 @@ x
   border-radius: 5px;
   padding: 30px 20px;
   color: $j-gray11;
+  min-height: 300px;
+  min-width: 300px;
 }
 
 .money {
@@ -123,6 +134,25 @@ i.fas {
   color: #9cbcc7;
 }
 
+i.far.fa-calendar-alt {
+  position: absolute;
+  top: 39px;
+  font-size: 24px;
+  left: 173px;
+}
+
+.logo-calendar {
+  position: relative;
+}
+
+label.date.optional {
+  margin-left: 13px;
+}
+
+label.select.optional {
+  margin-left: 5px;
+}
+
 .container-infos {
   justify-content: space-between;
 }
@@ -130,7 +160,6 @@ i.fas {
 .steps-infos {
   padding-top: 5px;
   margin-top: 8px;
-
 }
 
 #step-font {
@@ -169,6 +198,10 @@ i.fas {
   color: $j-gray11;
 }
 
+input.btn.btn-outline-warning.rounded-pill.modif {
+  margin-left: 76px;
+}
+
 #new_step {
   display: flex;
   flex-direction: column;
@@ -176,6 +209,12 @@ i.fas {
   align-items: center;
 }
 
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 /* TEXT AREA */
 
 .grow-wrap {
