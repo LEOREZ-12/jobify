@@ -35,4 +35,6 @@ document.addEventListener('turbolinks:load', () => {
   growTextarea();
 });
 
-import "chartkick/chart.js"
+import "chartkick/chart.js";
+import "fullcalendar/main.js";
+
