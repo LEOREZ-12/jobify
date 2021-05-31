@@ -5,7 +5,7 @@
 
   <div class="d-flex align-items-end justify-content-between" >
     <div class="">
-    <h2 class="">Mes candidatures</h2>
+      <h2 class="">Mes candidatures</h2>
     </div>
 
     <div class="search-bar mt-2">
@@ -20,39 +20,31 @@
     </div>
   </div>
 
-      <div class="dash-category d-flex justify-content-start align-items-start pb-3">
+  <div class="dash-category d-flex justify-content-start align-items-center pb-3">
+    <%= link_to applies_path, class: "filtre-balise mx-3 #{ !@status ? 'active' : '' }" do %>
+      <span>Toutes</span>
+      <span><%= @allapplies_user.count %></span>
+    <% end %>
+    
+    <%= link_to applies_path(params: { status: 'Entretien' }), class: "filtre-balise mx-3 #{ @status == 'Entretien' ? 'active' : '' }" do %>
+      <span>Entretiens à préparer</span>
+      <span><%= @entretiens.count %></span>
+    <% end %>
+    
+    <%= link_to applies_path(params: { status: 'A postuler' }), class: "filtre-balise mx-3 #{ @status == 'A postuler' ? 'active' : '' }" do %>
+      <span>Candidatures à envoyer</span>
+      <span><%= @candidatures.count %></span>
+    <% end %>
 
-        <div class="mx-3">
-          <%= link_to 'Toutes', applies_path %>
-          <span>(<%= @allapplies_user.count %>)</span>
-        </div>
-
-        <div class="mx-3">
-          <%= link_to 'Entretiens à préparer', applies_path(params: { status: 'Entretien' }) %>
-          <span>(<%= @entretiens.count %>)</span>
-        </div>
-
-        <div class="mx-3">
-          <%= link_to 'Candidatures à envoyer', applies_path(params: { status: 'A postuler' }) %>
-          <span>(<%= @candidatures.count %>)</span>
-        </div>
-
-        <div class="mx-3">
-          <%= link_to 'Relances', applies_path(params: { status: 'reminder' }) %>
-          <span>(<%= @reminders.count %>)</span>
-        </div>
-
-        <div class="mx-3">
-          <%= link_to 'Propositions à recevoir', applies_path(params: { status: 'Proposition à recevoir' }) %>
-          <span>(<%= @propositions.count %>)</span>
-        </div>
-
-        <div class="mx-3">
-          <%= link_to 'Refusées', applies_path(params: { status: 'Refus' }) %>
-         <span>(<%= @refusees.count %>) </span>
-        </div>
-      </div>
-
+    <%= link_to applies_path(params: { status: 'Proposition à recevoir' }), class: "filtre-balise mx-3 #{ @status == 'Proposition à recevoir' ? 'active' : '' }" do %>
+      <span>Propositions à recevoir</span>
+      <span><%= @propositions.count %></span>
+    <% end %>
+    <%= link_to applies_path(params: { status: 'Refus' }), class: "filtre-balise mx-3 #{ @status == 'Refus' ? 'active' : '' }" do %>
+      <span>Refusées</span>
+      <span><%= @refusees.count %></span>
+    <% end %>
+  </div>
       <div class="">
         <% @applies.each do |apply| %>
           <div class="container-offer pt-4">
@@ -72,23 +64,26 @@
               <div class="money"><i class="fas fa-coins mx-2"></i><%= apply.offer.salary %> k</div>
             </div>
           </div>
-        <% end  %>
+          <div class="money"><i class="fas fa-coins mx-2"></i><%= apply.offer.salary %> k</div>
+        </div>
+      </div>
+    <% end  %>
+  </div>
 
+  <br>
+
+  <div class="dash-right d-flex align-items-end flex-column">
+    <div class="calendar-1">
+      <%# <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S"> %>
+      <%= image_tag "semaine_1.png", class: 'calend-pic' %>
+      <p>Cette semaine</p>
     </div>
 
-   <div class="dash-right d-flex align-items-end flex-column">
-        <div class="calendar-1">
-          <%# <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S"> %>
-          <%= image_tag "semaine_1.png", class: 'calend-pic' %>
-          <p>Cette semaine</p>
-        </div>
-
-        <div class="calendar-2">
-          <%# <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S+1"> %>
-          <%= image_tag "semaine_2.png", class: 'calend-pic' %>
-          <p>La semaine prochaine</p>
-        </div>
-
-
+    <div class="calendar-2">
+      <%# <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S+1"> %>
+      <%= image_tag "semaine_2.png", class: 'calend-pic' %>
+      <p>La semaine prochaine</p>
+    </div>
+  </div>
 </div>
 
