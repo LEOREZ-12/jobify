@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <link rel="stylesheet" href="datepicker.min.css">
   </head>
 
   <body>
@@ -18,5 +19,6 @@
     <div class="my-container">
     <%= yield %>
     <%= render 'shared/footer' %>
+    <script src="datepicker.min.js"></script>
   </body>
 </html>

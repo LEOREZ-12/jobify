@@ -3142,6 +3142,11 @@ findup-sync@^3.0.0:
     micromatch "^3.0.4"
     resolve-dir "^1.0.1"
 
+flatpickr@^4.6.9:
+  version "4.6.9"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.9.tgz#9a13383e8a6814bda5d232eae3fcdccb97dc1499"
+  integrity sha512-F0azNNi8foVWKSF+8X+ZJzz8r9sE1G4hl06RyceIaLvyltKvDl6vqk9Lm/6AUUCi5HWaIjiUbk7UpeE/fOXOpw==
+
 flatted@^2.0.1:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
@@ -4135,6 +4140,11 @@ js-base64@^2.1.8:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.6.4.tgz#f4e686c5de1ea1f867dbcad3d46d969428df98c4"
   integrity sha512-pZe//GGmwJndub7ZghVHz7vjb2LgC1m8B07Au3eYqeqv9emhESByMXxaEgkUkEqJe87oBbSniGYoQNIBklc7IQ==
+
+js-datepicker@^5.18.0:
+  version "5.18.0"
+  resolved "https://registry.yarnpkg.com/js-datepicker/-/js-datepicker-5.18.0.tgz#d96be9f77940913bdd8ee6906ad42fbe6b49a262"
+  integrity sha512-t8s5zBdqJIbB0QhWUeHDZOG6u9B1X9F8CQ4ucRzcOt5sQvA8Dxb/SdPBCktDlrzBDInAgnvzQ3QKzP9EokUAsQ==
 
 js-tokens@^4.0.0:
   version "4.0.0"

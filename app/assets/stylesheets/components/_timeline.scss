@@ -1,0 +1,91 @@
+.comments-notes {
+  ul {
+    border-left: 2px solid black;
+    li {
+      list-style: none;
+      padding: 16px;
+      border: 1px solid lightgrey;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      position: relative;
+      &:before {
+        content: "";
+        height: 40px;
+        width: 40px;
+        background: black;
+        position: absolute;
+        left: -42px;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        color: white;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+      }
+      &.A.postuler {
+        &:before {
+          background: $j-light-blue;
+          content:"\f02e";
+        }
+      }
+      &.Candidature.envoyée {
+        &:before {
+          background: $j-light-blue;
+          content: "\f1d8";
+        }
+      }
+      &.Proposition.recevoir {
+        &:before {
+          background: $j-light-blue;
+          content: "\f573";
+        }
+      }
+      &.Entretien {
+        &:before {
+          background: $j-light-blue;
+          content: "\f2b5";
+        }
+      }
+      &.Echange.téléphonique {
+        &:before {
+          background: $j-light-blue;
+          content: "\f2a0";
+        }
+      }
+      &.Refus.du.recruteur {
+        &:before {
+          background: red;
+          content: "\f057";
+        }
+      }
+      &.Refus.du.candidat {
+        &:before {
+          background: red;
+          content: "\f057";
+        }
+      }
+      &.Proposition.acceptée {
+        &:before {
+          background: greenyellow;
+          content: "\f058";
+        }
+      }
+    }
+  }
+
+} 
+
+p.step-date {
+  position: absolute;
+  left: -100%;
+  color: $j-dark-blue;
+}
+
+p.step-name.m-0 {
+    color: $j-dark-blue;
+    font-weight: bold;
+}
