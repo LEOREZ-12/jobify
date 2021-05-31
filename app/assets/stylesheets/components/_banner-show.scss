@@ -83,3 +83,18 @@
 .blue-title {
   font-size: 22px;
 }
+
+.status-label {
+  background-color: #06AED5;
+  color: white;
+  font-size: 10px !important;
+  line-height: 12px !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
+  font-weight: 800 !important;
+  padding: 6px 8px !important;
+  text-transform: uppercase !important;
+  position: absolute;
+  top: 10px;
+  right: 16px;
+}
