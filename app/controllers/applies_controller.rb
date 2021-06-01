@@ -15,7 +15,9 @@ class AppliesController < ApplicationController
     @allexceptdeclined = @allapplies_user.where("status NOT LIKE :prefix", prefix: "Refus%")
     @reminders = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day)
     @applies = current_user.applies
-    if params.dig(:status) == "reminder"
+    if params[:query].present?
+      @applies = @applies.search_by_company_name(params[:query])
+    elsif params.dig(:status) == "reminder"
       @applies = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day)
     elsif params.dig(:status)
       @applies = @applies.where("status LIKE :prefix", prefix: "#{params[:status]}%")
