@@ -1,9 +1,5 @@
 <div class="custom-container">
-  <div class="dash-header pt-4 pb-3">
-    <h1>Bonjour <%= current_user.first_name %></h1>
-  </div>
-
-  <div class="d-flex align-items-end justify-content-between" >
+  <div class="d-flex align-items-center justify-content-between" >
     <div class="">
       <h2 class="">Mes candidatures</h2>
     </div>
@@ -19,9 +15,9 @@
       <% end %>
     </div>
   </div>
-
-  <div class="dash-category d-flex justify-content-start align-items-center pb-3">
-    <%= link_to applies_path, class: "filtre-balise mx-3 #{ !@status ? 'active' : '' }" do %>
+  <br>
+  <div class="dash-category d-flex justify-content-start align-items-center pb-3 pr-2">
+    <%= link_to applies_path, class: "filtre-balise mr-3 #{ !@status ? 'active' : '' }" do %>
       <span>Toutes</span>
       <span><%= @allapplies_user.count %></span>
     <% end %>
@@ -45,21 +41,24 @@
       <span><%= @refusees.count %></span>
     <% end %>
   </div>
-    <div class="">
-      <% @applies.each do |apply| %>
-        <%= link_to apply_path(apply) do %>
-          <div class="container-offer pt-4">
-            <div class="card-offer">
-              <%= cl_image_tag apply.offer.company_logo.key, height: 300, width: 400 %>
-              <div class="card-dispatch">
-                <div class="card-offer-infos">
-                  <h5><%= apply.offer.company_name %></h5>
-                  <h3><%= apply.offer.job_title %></h3>
-                  <p>CDI<span class="mx-2">•</span>
-                  <%= apply.offer.company_city %><span class="mx-2">•</span>
-                  Publié le <%= I18n.l(apply.offer.publish_date, format: " %d/%m/%Y") %><span class="mx-2">•</span>
-                  il y a <%= time_ago_in_words(apply.offer.publish_date) %></p>
+      <div class="">
+        <% @applies.each do |apply| %>
+          <%= link_to apply_path(apply) do %>
+            <div class="container-offer pt-4">
+              <div class="card-offer">
+                <%= cl_image_tag apply.offer.company_logo.key, height: 300, width: 400 %>
+                <div class="card-dispatch">
+                  <div class="card-offer-infos">
+                    <h5><%= apply.offer.company_name %></h5>
+                    <h3><%= apply.offer.job_title %></h3>
+                    <p>CDI<span class="mx-2">•</span>
+                    <%= apply.offer.company_city %><span class="mx-2">•</span>
+                    Publié le <%= I18n.l(apply.offer.publish_date, format: " %d/%m/%Y") %><span class="mx-2">•</span>
+                    il y a <%= time_ago_in_words(apply.offer.publish_date) %></p>
+                  </div>
                 </div>
+                <h2 class="status-label status-label-index <%= apply.status %>"> <%= apply.status %></h2>
+                <div class="money"><i class="fas fa-coins mx-2"></i><span><%= apply.offer.salary %></span> k€</div>
               </div>
               <h2 class="status-label <%= apply.status %>"> <%= apply.status %></h2>
               <div class="money"><i class="unique fas fa-coins"></i><%= apply.offer.salary %> k €</div>

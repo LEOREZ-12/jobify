@@ -10,3 +10,54 @@
   padding: 4px 8px;
   border-radius: 8px;
 }
+
+#applies-index {
+
+  .dash-category {
+    width: fit-content;
+    border-bottom: 1px solid grey;
+  }
+
+  .card-offer {
+
+    background: none;
+    box-shadow: none;
+    padding: 10px 0;
+    border-bottom: 1px solid lightgray;
+    border-radius: 0;
+    .status-label-index {
+      background: #b6e7f3;
+      color: $j-dark-blue;
+      border: none;
+      font-size: 14px;
+      padding: 8px 12px;
+      text-transform: none;
+      &:before {
+        background: none;
+        color: $j-dark-blue;
+      }
+    }
+
+    .card-offer-infos {
+      color: #394448;
+      p {
+        font-size: 14px;
+        color: #394448;
+      }
+      
+    }
+    
+    .money {
+      color: #394448;
+      span {
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+#query {
+  border-radius: 50px;
+  
+}
