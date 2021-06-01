@@ -67,7 +67,7 @@
         <div class="comments-notes d-flex p-4 flex-column mb-4 ">
           <h6><strong class="blue-title">Historique</strong></h6><hr>
           <ul>
-            <% @apply.steps[0...-1].each do |step|%>
+            <% @apply.steps[0...-1].sort_by { |step| step.created_at }.reverse!.each do |step|%>
             <li class="<%= step.name %>"><p class="mb-0 step-date"><%= step.date.strftime("%d/%m/%Y") %></p><p class="step-name m-0"><%= step.name %></p></li>
             <% end %>
           </ul>
@@ -82,7 +82,7 @@
             </div>
           <% end %>
           <div class="d-flex flex-column w-100">
-            <% @apply.comments.each do |comment|%>
+            <% @apply.comments.order(created_at: :desc).each do |comment|%>
               <p class="mb-2"><%= comment.created_at.strftime("%d/%m/%Y") %> - <%= comment.content %></p>
             <% end %>
           </div>
