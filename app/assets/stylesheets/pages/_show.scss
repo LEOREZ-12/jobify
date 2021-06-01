@@ -85,6 +85,8 @@ strong.orange-title {
   align-items: center;
   color: #086788;
   font-weight: 200!important;
+  margin-left: 14px;
+  margin-right: -4px;
 }
 
 .card-dispatch {
@@ -116,6 +118,12 @@ strong.orange-title {
   color: $j-gray11;
   min-height: 250px;
   min-width: 300px;
+}
+
+i.unique.fas.fa-coins {
+  padding: 0px 10px 12px 0px;
+  align-self: flex-end;
+  color: $j-dark-blue;
 }
 
 .money {
