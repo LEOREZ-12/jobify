@@ -35,7 +35,7 @@ puts "Creating offers..."
   })
 
   logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035931/blablacar.svg')
-  banner = URI.open('https://res.cloudinary.com/dhtljpbp8/image/upload/v1622553738/banner-bla_zpksyf.jpg')
+  banner = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622558148/blablacar2_cvw4pc.jpg')
   blablacar.company_logo.attach(io: logo, filename: 'blablacar.svg', content_type: 'image/svg')
   blablacar.banner.attach(io: banner, filename: 'blablacar_banner.jpg', content_type: 'image/jpg')
   blablacar.save!
@@ -112,9 +112,9 @@ puts "Creating offers..."
                 salary: 52, created_at: "2021-04-21", updated_at: "2021-04-21"
   })
 
-  logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035212/qonto.jpg')
+  logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622552181/qonto2.png')
   banner = URI.open('https://res.cloudinary.com/dhtljpbp8/image/upload/v1622555172/qonto2_ato8dd.jpg')
-  qonto.company_logo.attach(io: logo, filename: 'qonto.jpg', content_type: 'image/jpg')
+  qonto.company_logo.attach(io: logo, filename: 'qonto.png', content_type: 'image/png')
   qonto.banner.attach(io: banner, filename: 'qonto_banner.jpeg', content_type: 'image/jpeg')
   qonto.save!
 

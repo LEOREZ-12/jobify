@@ -17,6 +17,8 @@ class AppliesController < ApplicationController
     @reminders = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day)
     @applies = current_user.applies
 
+    @status = params[:status]
+
     if params[:query].present?
       @applies = @applies.search_by_company_name(params[:query])
     elsif params.dig(:status) == "reminder"
