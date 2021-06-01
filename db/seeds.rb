@@ -23,7 +23,13 @@ puts "Creating user..."
 puts "Creating offers..."
   blablacar = Offer.new({ job_title: "Product Owner Senior", company_name: "BlaBlaCar",
                 company_street: "84 Avenue de la République", company_city: "Paris", company_zipcode: "75011", publish_date: "2021-04-05",
-                job_description: "Intégré.à l’équipe Produit, ton rôle sera de manager le cycle de développement de fonctionnalités et d’être l’interlocuteur dédié autour du produit auprès de nos clients ainsi qu’auprès de nos équipes.",
+                job_description: "Tu travailleras au sein de l’équipe Product, en relation étroite avec Victoire, notre Head of Product. Ton rôle ? Identifier les besoins clients, et travailler avec ta squad à la mise en place de solutions qui répondent à ton objectif.
+
+                🌟 Tu auras l’opportunité de travailler sur plusieurs produits :
+                
+                L’app mobile pour les clients qui leur permet de gérer leurs réservations
+                Le produit client côté web, qui permet le suivi de leur réservation
+                Les outils interne pour venir en support des ops afin de faciliter le suivi au quotidien",
                 glassdoor_rate: 4, recruiter_name: "Paul LEFEVRE", recruiter_email: "paul.lefevre@blablacar.fr", recruiter_phone_number: "06 05 04 03 02",
                 salary: 50, created_at: "2021-04-06", updated_at: "2021-04-07"
   })
@@ -103,7 +109,7 @@ puts "Offers finished!"
 
 # APPLIES
 
-apply_a = Apply.new({ user: nicolas, offer: blablacar, application_date: "2021-04-07", created_at: "2021-04-07", updated_at: "2021-04-07",
+apply_a = Apply.new({ user: nicolas, offer: blablacar, application_date: "2021-04-07", created_at: "2021-04-08", updated_at: "2021-04-07",
               status: "Candidature envoyée", salary_expectation: "52"
 })
 apply_a.save!
@@ -143,11 +149,11 @@ puts "Applies finished!"
 # COMMENT
 
 
-comment_a = Comment.new({ content: "Poste intéressant, équipe conviviale, à suivre...", apply: apply_a, created_at: "2021-04-08", updated_at: "2021-04-09"
+comment_a = Comment.new({ content: "Poste intéressant, se renseigner sur Victoire à qui je serai rattaché et les locaux sont cannons !!!", apply: apply_a, created_at: "2021-04-08", updated_at: "2021-04-08"
   })
 comment_a.save!
 
-comment_b = Comment.new({ content: "J'ai croisé le CEO à la machine à café, il est cool", apply: apply_a, created_at: "2021-04-08", updated_at: "2021-04-09"
+comment_b = Comment.new({ content: "Echange avec le recruteur, process de recrutement en 3 entretiens: RH, Manager, C-levels", apply: apply_a, created_at: "2021-04-12", updated_at: "2021-04-12"
   })
 comment_b.save!
 
