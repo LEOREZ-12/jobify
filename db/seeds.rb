@@ -26,7 +26,7 @@ puts "Creating offers..."
                 job_description: "Tu travailleras au sein de l’équipe Product, en relation étroite avec Victoire, notre Head of Product. Ton rôle ? Identifier les besoins clients, et travailler avec ta squad à la mise en place de solutions qui répondent à ton objectif.
 
                 🌟 Tu auras l’opportunité de travailler sur plusieurs produits :
-                
+
                 L’app mobile pour les clients qui leur permet de gérer leurs réservations
                 Le produit client côté web, qui permet le suivi de leur réservation
                 Les outils interne pour venir en support des ops afin de faciliter le suivi au quotidien",
@@ -34,8 +34,10 @@ puts "Creating offers..."
                 salary: 50, created_at: "2021-04-06", updated_at: "2021-04-07"
   })
 
-  file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035931/blablacar.svg')
-  blablacar.company_logo.attach(io: file, filename: 'blablacar.svg', content_type: 'image/svg')
+  logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035931/blablacar.svg')
+  banner = URI.open('https://res.cloudinary.com/dhtljpbp8/image/upload/v1622553738/banner-bla_zpksyf.jpg')
+  blablacar.company_logo.attach(io: logo, filename: 'blablacar.svg', content_type: 'image/svg')
+  blablacar.banner.attach(io: banner, filename: 'blablacar_banner.jpg', content_type: 'image/jpg')
   blablacar.save!
 
   back_market = Offer.new({ job_title: "Product Owner", company_name: "Back Market",
@@ -45,8 +47,10 @@ puts "Creating offers..."
                 salary: 50, created_at: "2021-04-13", updated_at: "2021-04-14"
   })
 
-  file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034899/back_market.png')
-  back_market.company_logo.attach(io: file, filename: 'back_market.png', content_type: 'image/png')
+  logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034899/back_market.png')
+  banner = URI.open('https://res.cloudinary.com/dhtljpbp8/image/upload/v1622552980/back_market_banner_cqeyij.jpg')
+  back_market.company_logo.attach(io: logo, filename: 'back_market.png', content_type: 'image/png')
+  back_market.banner.attach(io: banner, filename: 'back_market_banner.jpeg', content_type: 'image/jpeg')
   back_market.save!
 
   deezer = Offer.new({ job_title: "Product Owner Senior", company_name: "Deezer",
@@ -56,8 +60,10 @@ puts "Creating offers..."
                 salary: 45, created_at: "2021-04-09", updated_at: "2021-04-12"
   })
 
-  file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034727/deezer.svg')
-  deezer.company_logo.attach(io: file, filename: 'deezer.svg', content_type: 'image/svg')
+  logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034727/deezer.svg')
+  banner = URI.open('https://res.cloudinary.com/dhtljpbp8/image/upload/v1622552971/deezer_banner_sje0p1.jpg')
+  deezer.company_logo.attach(io: logo, filename: 'deezer.svg', content_type: 'image/svg')
+  deezer.banner.attach(io: banner, filename: 'deezer_banner.jpeg', content_type: 'image/jpeg')
   deezer.save!
 
   mano_mano = Offer.new({ job_title: "Product Manager", company_name: "ManoMano",
@@ -67,8 +73,10 @@ puts "Creating offers..."
                 salary: 48, created_at: "2021-04-09", updated_at: "2021-04-12"
   })
 
-  file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035024/mano_mano.png')
-  mano_mano.company_logo.attach(io: file, filename: 'mano_mano.png', content_type: 'image/png')
+  logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035024/mano_mano.png')
+  banner = URI.open('https://res.cloudinary.com/dhtljpbp8/image/upload/v1622552827/manomano_banner_iviaar.jpg')
+  mano_mano.company_logo.attach(io: logo, filename: 'mano_mano.png', content_type: 'image/png')
+  mano_mano.banner.attach(io: banner, filename: 'manomano_banner.jpeg', content_type: 'image/jpeg')
   mano_mano.save!
 
   alan = Offer.new({ job_title: "Product Owner / PM", company_name: "Alan",
@@ -78,8 +86,10 @@ puts "Creating offers..."
                 salary: 52, created_at: "2021-04-20", updated_at: "2021-04-22"
   })
 
-  file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034662/alan.png')
-  alan.company_logo.attach(io: file, filename: 'alan.png', content_type: 'image/png')
+  logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034662/alan.png')
+  banner = URI.open('https://res.cloudinary.com/dhtljpbp8/image/upload/v1622552809/alan2_jl3h7n.jpg')
+  alan.company_logo.attach(io: logo, filename: 'alan.png', content_type: 'image/png')
+  alan.banner.attach(io: banner, filename: 'alan_banner.jpeg', content_type: 'image/jpeg')
   alan.save!
 
   ab_tasty = Offer.new({ job_title: "Product Owner / PM", company_name: "AB Tasty",
@@ -89,8 +99,10 @@ puts "Creating offers..."
                 salary: 52, created_at: "2021-04-21", updated_at: "2021-04-21"
   })
 
-  file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035143/ab-tasty.png')
-  ab_tasty.company_logo.attach(io: file, filename: 'ab-tasty.png', content_type: 'image/png')
+  logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035143/ab-tasty.png')
+  banner = URI.open('https://res.cloudinary.com/dhtljpbp8/image/upload/v1622555158/abtasty2_dgcola.jpg')
+  ab_tasty.company_logo.attach(io: logo, filename: 'ab-tasty.png', content_type: 'image/png')
+  ab_tasty.banner.attach(io: banner, filename: 'abtasty_banner.jpeg', content_type: 'image/jpeg')
   ab_tasty.save!
 
   qonto = Offer.new({ job_title: "Product Owner / PM", company_name: "Qonto",
@@ -100,8 +112,10 @@ puts "Creating offers..."
                 salary: 52, created_at: "2021-04-21", updated_at: "2021-04-21"
   })
 
-  file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035212/qonto.jpg')
-  qonto.company_logo.attach(io: file, filename: 'qonto.jpg', content_type: 'image/jpg')
+  logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035212/qonto.jpg')
+  banner = URI.open('https://res.cloudinary.com/dhtljpbp8/image/upload/v1622555172/qonto2_ato8dd.jpg')
+  qonto.company_logo.attach(io: logo, filename: 'qonto.jpg', content_type: 'image/jpg')
+  qonto.banner.attach(io: banner, filename: 'qonto_banner.jpeg', content_type: 'image/jpeg')
   qonto.save!
 
 puts "Offers finished!"
