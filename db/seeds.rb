@@ -100,7 +100,7 @@ puts "Creating offers..."
                 salary: 52, created_at: "2021-04-21", updated_at: "2021-04-21"
   })
 
-  file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035212/qonto.jpg')
+  file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622552181/qonto2.png')
   qonto.company_logo.attach(io: file, filename: 'qonto.jpg', content_type: 'image/jpg')
   qonto.save!
 
