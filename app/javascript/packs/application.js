@@ -36,7 +36,7 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 
-import "chartkick/chart.js"
+import "chartkick/chart.js";
 
 import { initFlatpickr } from "../plugins/flatpickr";
 

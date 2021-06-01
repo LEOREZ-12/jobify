@@ -17,9 +17,10 @@ class AppliesController < ApplicationController
     @reminders = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day)
     @applies = current_user.applies
 
-    @status = params[:status]
+    if params[:query].present?
+      @applies = @applies.search_by_company_name(params[:query])
+    elsif params.dig(:status) == "reminder"
 
-    if params.dig(:status) == "reminder"
       @applies = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day)
     elsif params.dig(:status)
       @applies = @applies.where("status LIKE :prefix", prefix: "#{params[:status]}%")
