@@ -186,7 +186,7 @@ step_f = Step.new({ name: "Candidature envoyée", apply: apply_a, date: "2021-04
   })
 step_f.save!
 
-step_g = Step.new({ name: "Echange Téléphonique", apply: apply_a, date: "2021-04-12"
+step_g = Step.new({ name: "Echange téléphonique", apply: apply_a, date: "2021-04-12"
 })
 step_g.save!
 
