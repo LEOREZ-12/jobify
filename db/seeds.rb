@@ -149,7 +149,7 @@ puts "Applies finished!"
 # COMMENT
 
 
-comment_a = Comment.new({ content: "Poste intéressant, se renseigner sur Victoire à qui je serai rattaché et les locaux sont cannons !!!", apply: apply_a, created_at: "2021-04-08", updated_at: "2021-04-08"
+comment_a = Comment.new({ content: "Poste intéressant, se renseigner sur Victoire à qui je serai rattaché et les locaux sont canons !!!", apply: apply_a, created_at: "2021-04-08", updated_at: "2021-04-08"
   })
 comment_a.save!
 
