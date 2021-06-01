@@ -1,7 +1,7 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @offer.banner.key, width: 400 %>')">
   <div class="show-container">
     <div class="card-offer-banner">
-      <%= cl_image_tag @offer.company_logo.key, height: 300, width: 400, crop: :fill %>
+      <%= cl_image_tag @offer.company_logo.key, height: 300, width: 400 %>
       <div class="card-dispatch">
         <div class="card-offer-infos">
           <h5><%= @offer.company_name %></h5>
