@@ -22,12 +22,12 @@
       <span>Toutes</span>
       <span><%= @allapplies_user.count %></span>
     <% end %>
-    
+
     <%= link_to applies_path(params: { status: 'Entretien' }), class: "filtre-balise mx-3 #{ @status == 'Entretien' ? 'active' : '' }" do %>
       <span>Entretiens à préparer</span>
       <span><%= @entretiens.count %></span>
     <% end %>
-    
+
     <%= link_to applies_path(params: { status: 'A postuler' }), class: "filtre-balise mx-3 #{ @status == 'A postuler' ? 'active' : '' }" do %>
       <span>Candidatures à envoyer</span>
       <span><%= @candidatures.count %></span>
