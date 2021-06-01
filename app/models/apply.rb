@@ -17,4 +17,11 @@ class Apply < ApplicationRecord
       # trigram: { word_similarity: true, threshold: 0.3 }, // pour gerer les typos
       tsearch: { prefix: true }
     }
+
+  def content_for_fullcalendar
+    {
+      title: status,
+      start: steps.last.date
+    }
+  end
 end

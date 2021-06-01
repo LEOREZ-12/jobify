@@ -2,7 +2,8 @@
   "name": "jobify",
   "private": true,
   "dependencies": {
-    "@fullcalendar/timegrid": "^5.7.0",
+    "@fullcalendar/core": "^5.7.0",
+    "@fullcalendar/daygrid": "^5.7.0",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
@@ -11,7 +12,6 @@
     "chart.js": "^3.3.0",
     "chartkick": "^4.0.4",
     "flatpickr": "^4.6.9",
-    "fullcalendar": "^5.7.0",
     "jquery": "^3.6.0",
     "js-autocomplete": "^1.0.4",
     "js-datepicker": "^5.18.0",

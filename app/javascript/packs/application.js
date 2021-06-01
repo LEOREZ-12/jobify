@@ -24,25 +24,26 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "chartkick/chart.js";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { growTextarea } from '../components/growTextarea';
+import { initFlatpickr } from "../plugins/flatpickr";
+import { initCalendar } from "../plugins/init_calendar";
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   growTextarea();
+  initFlatpickr();
+  initCalendar();
 });
 
 
-import "chartkick/chart.js";
-
-import { initFlatpickr } from "../plugins/flatpickr";
-
-initFlatpickr();
 
 
-import "fullcalendar/main.js";
+
+
 
 

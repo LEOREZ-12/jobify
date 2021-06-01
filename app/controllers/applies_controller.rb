@@ -17,6 +17,10 @@ class AppliesController < ApplicationController
     @reminders = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day)
     @applies = current_user.applies
 
+    @applies_for_fullcalendar = @applies.map { |apply| apply.content_for_fullcalendar }
+    # @applies_for_fullcalendar = @applies.map(&:content_for_fullcalendar)
+
+
     @status = params[:status]
 
     if params[:query].present?
