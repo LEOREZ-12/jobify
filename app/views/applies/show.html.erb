@@ -83,7 +83,7 @@
           <% end %>
           <div class="d-flex flex-column w-100">
             <% @apply.comments.each do |comment|%>
-              <p class="mb-2"><%= comment.created_at.strftime("%d/%m/%Y") %> - <%= comment.content %></p>
+              <p class="mb-0"><%= comment.created_at.strftime("%d/%m/%Y") %> - <%= comment.content %></p>
             <% end %>
           </div>
         </div> 
