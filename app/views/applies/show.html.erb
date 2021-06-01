@@ -7,12 +7,12 @@
           <h5><%= @offer.company_name %></h5>
           <h3><%= @offer.job_title %></h3>
           <p>CDI<span class="mx-2">•</span>
-          <%= @offer.company_city %><span class="mx-2">•</span>
-          Publié le <%= I18n.l(@offer.publish_date, format: "%A %d %B %Y") %><span class="mx-2">•</span>
-          il y a <%= time_ago_in_words(@offer.publish_date) %></p>
+            <%= @offer.company_city %><span class="mx-2">•</span>
+            Publié le <%= I18n.l(@offer.publish_date, format: "%A %d %B %Y") %><span class="mx-2">•</span>
+            il y a <%= time_ago_in_words(@offer.publish_date) %><span class="mx-2">•</span><i class="fas fa-coins mx-2"></i><%= @offer.salary %> k €</div>
+          </p>
         </div>
       </div>
-      <div class="money"><i class="fas fa-coins mx-2"></i><%= @offer.salary %> k€</div>
     </div>
   </div>
 </div>
@@ -68,7 +68,7 @@
           <h6><strong class="blue-title">Historique</strong></h6><hr>
           <ul>
             <% @apply.steps[0...-1].each do |step|%>
-            <li class="<%= step.name %>"><p class="mb-0 step-date"><%= step.date.strftime("%d/%m/%Y") %></p><p class="step-name m-0"><%= step.name %></p></li> 
+            <li class="<%= step.name %>"><p class="mb-0 step-date"><%= step.date.strftime("%d/%m/%Y") %></p><p class="step-name m-0"><%= step.name %></p></li>
             <% end %>
           </ul>
         </div>

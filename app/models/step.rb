@@ -10,5 +10,4 @@ class Step < ApplicationRecord
   def update_apply_status
     apply.update(status: name)
   end
-
 end

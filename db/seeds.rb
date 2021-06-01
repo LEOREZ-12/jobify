@@ -180,4 +180,20 @@ step_f = Step.new({ name: "Candidature envoyée", apply: apply_a, date: "2021-04
   })
 step_f.save!
 
+step_g = Step.new({ name: "Echange Téléphonique", apply: apply_a, date: "2021-04-12"
+})
+step_g.save!
+
+[apply_b, apply_d, apply_e, apply_f, apply_g].each do |apply|
+  Step.create({ name: "A postuler", apply: apply, date: "2021-04-07" })
+end
+
+[apply_b, apply_d, apply_e, apply_f, apply_g].each do |apply|
+  Step.create({ name: "Candidature envoyée", apply: apply, date: "2021-04-09" })
+end
+
+[apply_b, apply_d, apply_f].each do |apply|
+  Step.create({ name: "Echange téléphonique", apply: apply, date: "2021-04-16" })
+end
+
 puts "Steps finished!"
