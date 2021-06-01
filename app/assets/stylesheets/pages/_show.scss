@@ -14,11 +14,17 @@ strong.orange-title {
 
 #btn-chiant {
   position: relative;
-  bottom: 1px;
+  bottom: 3px;
 }
 
 .btn.btn-link.btn-lg.px-1 {
   font-size: larger;
+}
+
+a.btn.btn-outline-warning.mt-3.mx-2.rounded-pill {
+  margin-top: -21px;
+  bottom: 3px;
+  position: relative;
 }
 
 .col-3.mb-4 {
