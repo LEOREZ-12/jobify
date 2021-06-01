@@ -1,0 +1,12 @@
+.filtre-balise {
+  color: gray;
+  &:hover {
+    color: gray;
+  }
+}
+.filtre-balise.active {
+  background-color: $j-dark-blue;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
