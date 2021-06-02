@@ -26,6 +26,7 @@
       <% end %>
     </div>
   </div>
+
   <br>
   <br>
   
@@ -76,7 +77,7 @@
                   </div>
                 </div>
                 <h2 class="status-label status-label-index <%= apply.status %>"> <%= apply.status %></h2>
-                <div class="money"><i class="unique fas fa-coins"></i><strong><%= apply.offer.salary %></strong> k €</div>
+               <div class="money"><i class="unique fas fa-coins"></i><span class="money-height"><strong><%= apply.offer.salary %></strong></span> k €</div>
               </div>
             </div>
           <% end %>
@@ -90,6 +91,12 @@
       <div class="dash-chart">
         <%= column_chart @applies.group(:status).count, colors: ["#06AED5", "#F35B04"], label: "Value", height: "380px" %>
       </div>
+    </div>
+    <div class="dash-chart">
+      <%= bar_chart @applies.group(:status).count(:status), colors: ["#06AED5", "#F35B04"], label: "Value", height: "380px" %>
+    </div>
+    <div class="dash-chart">
+      <#%= bar_chart @applies.offer.company_name.group(:status), colors: ["#06AED5", "#F35B04"], label: "Value", height: "380px" %>
     </div>
   </div>
 </div>
