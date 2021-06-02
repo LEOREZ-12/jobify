@@ -6,9 +6,11 @@
     <li class="nav-item" role="presentation">
       <a class="nav-link active" id="candidatures-tab" data-toggle="tab" href="#candidatures" role="tab" aria-controls="candidatures" aria-selected="true"><h4>Mes candidatures</h4> </a>
     </li>
+    <span class="mr-1"></span>
     <li class="nav-item" role="presentation">
       <a class="nav-link" id="calendrier-tab" data-toggle="tab" href="#calendrier" role="tab" aria-controls="calendrier" aria-selected="false"><h4>Mon calendrier</h4></a>
     </li>
+    <span class="mr-1"></span>
     <li class="nav-item" role="presentation">
       <a class="nav-link" id="stats-tab" data-toggle="tab" href="#stats" role="tab" aria-controls="stats" aria-selected="false"><h4>Mes stats</h4></a>
     </li>
@@ -33,28 +35,28 @@
   <div class="tab-pane fade show active" id="candidatures" role="tabpanel" aria-labelledby="candidatures-tab">
   
     <div class="dash-category d-flex justify-content-start align-items-center pb-3 pr-2">
-      <%= link_to applies_path, class: "filtre-balise mr-3 d-flex #{ !@status ? 'active' : '' }" do %>
-        <span>Toutes</span>
+      <%= link_to applies_path, class: "filtre-balise mr-3 d-flex align-items-center #{ !@status ? 'active' : '' }" do %>
+        <span>Toutes</span><span class="mr-2"></span>
         <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @allapplies_user.count %></span></div>
       <% end %>
 
-      <%= link_to applies_path(params: { status: 'Entretien' }), class: "filtre-balise mx-3 d-flex #{ @status == 'Entretien' ? 'active' : '' }" do %>
-        <span>Entretiens à préparer</span>
-        <div class="circleBase type2 text-center"><span><%= @entretiens.count %></span></div>
+      <%= link_to applies_path(params: { status: 'A postuler' }), class: "filtre-balise mx-3 d-flex align-items-center #{ @status == 'A postuler' ? 'active' : '' }" do %>
+        <span>Candidatures à envoyer</span><span class="mr-2"></span>
+        <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @candidatures.count %></span></div>
       <% end %>
 
-      <%= link_to applies_path(params: { status: 'A postuler' }), class: "filtre-balise mx-3 #{ @status == 'A postuler' ? 'active' : '' }" do %>
-        <span>Candidatures à envoyer</span>
-        <div class="circleBase type2"><span><%= @candidatures.count %></span></div>
+      <%= link_to applies_path(params: { status: 'Entretien' }), class: "filtre-balise mx-3 d-flex align-items-center #{ @status == 'Entretien' ? 'active' : '' }" do %>
+        <span>Entretiens à préparer</span><span class="mr-2"></span>
+        <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @entretiens.count %></span></div>
       <% end %>
 
-      <%= link_to applies_path(params: { status: 'Proposition à recevoir' }), class: "filtre-balise mx-3 #{ @status == 'Proposition à recevoir' ? 'active' : '' }" do %>
-        <span>Propositions à recevoir</span>
-        <div class="circleBase type2"><span><%= @propositions.count %></span></div>
+      <%= link_to applies_path(params: { status: 'Proposition à recevoir' }), class: "filtre-balise mx-3 d-flex align-items-center #{ @status == 'Proposition à recevoir' ? 'active' : '' }" do %>
+        <span>Propositions à recevoir</span><span class="mr-2"></span>
+        <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @propositions.count %></span></div>
       <% end %>
-      <%= link_to applies_path(params: { status: 'Refus' }), class: "filtre-balise mx-3 #{ @status == 'Refus' ? 'active' : '' }" do %>
-        <span>Refusées</span>
-        <div class="circleBase type2"><span><%= @refusees.count %></span></div>
+      <%= link_to applies_path(params: { status: 'Refus' }), class: "filtre-balise mx-3 d-flex align-items-center #{ @status == 'Refus' ? 'active' : '' }" do %>
+        <span>Refusées</span><span class="mr-2"></span>
+        <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @refusees.count %></span></div>
       <% end %>
     </div>
 

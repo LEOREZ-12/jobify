@@ -206,84 +206,128 @@ puts "Comments finished!"
 
 
 # STEPS
-
+#apply_a
 step_a = Step.new({ name: "A postuler", apply: apply_a, date: "2021-05-06"
   })
 step_a.save!
 
-step_b = Step.new({ name: "A postuler", apply: apply_c, date: "2021-05-09"
+step_b = Step.new({ name: "Candidature envoyée", apply: apply_a, date: "2021-05-07"
   })
 step_b.save!
 
-step_c = Step.new({ name: "Candidature envoyée", apply: apply_c, date: "2021-05-12"
-  })
+step_c = Step.new({ name: "Echange téléphonique", apply: apply_a, date: "2021-05-12"
+})
 step_c.save!
 
-step_d = Step.new({ name: "Echange téléphonique", apply: apply_c, date: "2021-05-13"
+#apply_b
+step_d = Step.new({ name: "A postuler", apply: apply_b, date: "2021-05-09"
   })
 step_d.save!
 
-step_e = Step.new({ name: "Entretien", apply: apply_c, date: "2021-05-19"
+step_e = Step.new({ name: "Candidature envoyée", apply: apply_b, date: "2021-05-12"
   })
 step_e.save!
 
-step_f = Step.new({ name: "Candidature envoyée", apply: apply_a, date: "2021-05-07"
+step_f = Step.new({ name: "Echange téléphonique", apply: apply_b, date: "2021-05-14"
   })
 step_f.save!
 
-step_g = Step.new({ name: "Echange téléphonique", apply: apply_a, date: "2021-05-12"
-})
+step_g = Step.new({ name: "Entretien", apply: apply_b, date: "2021-05-19"
+  })
 step_g.save!
 
-step_h = Step.new({ name: "Proposition à recevoir", apply: apply_c, date: "2021-05-21"
+#apply_c
+step_h = Step.new({ name: "A postuler", apply: apply_c, date: "2021-05-16"
   })
 step_h.save!
 
-step_i = Step.new({ name: "Refus du recruteur", apply: apply_c, date: "2021-05-28"
+step_i = Step.new({ name: "Candidature envoyée", apply: apply_c, date: "2021-05-17"
   })
 step_i.save!
 
-step_k = Step.new({ name: "A postuler", apply: apply_i, date: "2021-05-05"
+step_j = Step.new({ name: "Refus du recruteur", apply: apply_c, date: "2021-05-21"
+  })
+step_j.save!
+
+#apply_d
+step_k = Step.new({ name: "A postuler", apply: apply_d, date: "2021-05-16"
   })
 step_k.save!
 
-step_l = Step.new({ name: "Candidature envoyée", apply: apply_i, date: "2021-05-10"
+#apply_e
+step_l = Step.new({ name: "A postuler", apply: apply_e, date: "2021-05-18"
   })
 step_l.save!
 
-step_m = Step.new({ name: "Echange téléphonique", apply: apply_i, date: "2021-05-13"
+#apply_f
+step_m = Step.new({ name: "A postuler", apply: apply_f, date: "2021-05-19"
   })
 step_m.save!
 
-step_n = Step.new({ name: "Entretien", apply: apply_i, date: "2021-05-19"
+step_n = Step.new({ name: "Candidature envoyée", apply: apply_f, date: "2021-05-20"
   })
 step_n.save!
 
-step_o = Step.new({ name: "Proposition à recevoir", apply: apply_i, date: "2021-05-25"
+step_o = Step.new({ name: "Entretien", apply: apply_f, date: "2021-06-01"
   })
 step_o.save!
 
-step_p = Step.new({ name: "A postuler", apply: apply_h, date: "2021-05-31"
+step_p = Step.new({ name: "Proposition à recevoir", apply: apply_f, date: "2021-06-04"
   })
 step_p.save!
 
-step_q = Step.new({ name: "Candidature envoyée", apply: apply_h, date: "2021-06-01"
+#apply_g
+step_q = Step.new({ name: "A postuler", apply: apply_g, date: "2021-05-18"
   })
 step_q.save!
 
+step_r = Step.new({ name: "Candidature envoyée", apply: apply_g, date: "2021-05-20"
+  })
+step_r.save!
+
+step_s = Step.new({ name: "Entretien", apply: apply_g, date: "2021-05-31"
+  })
+step_s.save!
+
+#apply_h
+step_t = Step.new({ name: "A postuler", apply: apply_h, date: "2021-05-18"
+  })
+step_t.save!
+
+step_u = Step.new({ name: "Candidature envoyée", apply: apply_h, date: "2021-05-20"
+  })
+step_u.save!
+
+step_v = Step.new({ name: "Entretien", apply: apply_h, date: "2021-05-26"
+  })
+step_v.save!
+
+#apply_i
+step_w = Step.new({ name: "A postuler", apply: apply_i, date: "2021-05-22"
+  })
+step_w.save!
+
+step_x = Step.new({ name: "Candidature envoyée", apply: apply_i, date: "2021-05-24"
+  })
+step_x.save!
+
+step_y = Step.new({ name: "Entretien", apply: apply_i, date: "2021-05-28"
+  })
+step_y.save!
+
 # AJOUT D'ETAPES EN MASSE
 
-[apply_b, apply_d, apply_e, apply_f, apply_g].each do |apply|
-  Step.create({ name: "A postuler", apply: apply, date: "2021-05-07" })
-end
+# [apply_b, apply_d, apply_e, apply_f, apply_g].each do |apply|
+#   Step.create({ name: "A postuler", apply: apply, date: "2021-05-07" })
+# end
 
-[apply_b, apply_d, apply_e, apply_f, apply_g].each do |apply|
-  Step.create({ name: "Candidature envoyée", apply: apply, date: "2021-05-09" })
-end
+# [apply_b, apply_d, apply_e, apply_f, apply_g].each do |apply|
+#   Step.create({ name: "Candidature envoyée", apply: apply, date: "2021-05-09" })
+# end
 
-[apply_b, apply_d, apply_f].each do |apply|
-  Step.create({ name: "Echange téléphonique", apply: apply, date: "2021-05-16" })
-end
+# [apply_b, apply_d, apply_f].each do |apply|
+#   Step.create({ name: "Echange téléphonique", apply: apply, date: "2021-05-16" })
+# end
 
 puts "Steps finished!"
 puts "CONGRATULATIONS: SEEDS COMPLETED !!!"
