@@ -62,23 +62,14 @@
             <div class="money"><i class="unique fas fa-coins"></i><strong><%= apply.offer.salary %></strong> k €</div>
           </div>
         </div>
-      <% end %> 
+      <% end %>
     <% end %>
   </div>
 
   <br>
 
   <div class="dash-right d-flex align-items-end flex-column">
-    <div class="calendar-1">
-      <%# <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S"> %>
-      <%= image_tag "semaine_1.png", class: 'calend-pic' %>
-      <p>Cette semaine</p>
-    </div>
-
-    <div class="calendar-2">
-      <%# <img src="https://source.unsplash.com/7F65HDP0-E0/400x300" alt="Calendrier S+1"> %>
-      <%= image_tag "semaine_2.png", class: 'calend-pic' %>
-      <p>La semaine prochaine</p>
+    <div id='calendar' data-applies="<%= @applies_for_fullcalendar.to_json %>">
     </div>
   </div>
 </div>

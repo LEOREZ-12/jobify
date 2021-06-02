@@ -892,21 +892,21 @@
   dependencies:
     tslib "^2.0.3"
 
-"@fullcalendar/daygrid@~5.7.0":
+"@fullcalendar/core@^5.7.0":
+  version "5.7.0"
+  resolved "https://registry.yarnpkg.com/@fullcalendar/core/-/core-5.7.0.tgz#ebeb93258e6ff41c758c954f82a25147fd9b7189"
+  integrity sha512-V9kNy/fgZLMPNarS1Eav3WUZIhdyzanYJPWTTxycCT/AiTxyw+RyinowhR9qnv3ZnUTMrZzCAplMT0HKdRFfnA==
+  dependencies:
+    "@fullcalendar/common" "~5.7.0"
+    preact "^10.0.5"
+    tslib "^2.0.3"
+
+"@fullcalendar/daygrid@^5.7.0":
   version "5.7.0"
   resolved "https://registry.yarnpkg.com/@fullcalendar/daygrid/-/daygrid-5.7.0.tgz#a98ad53aec22e18e0896967223d01490ea031938"
   integrity sha512-K/0A1XIcf527Q18Hg4eMXCdZwd9AkkfrOqm/rtzULnM5cRkd2oaHOksdrQ5V0kGHAQeV96sp9OCg8PPBrdlBoQ==
   dependencies:
     "@fullcalendar/common" "~5.7.0"
-    tslib "^2.0.3"
-
-"@fullcalendar/timegrid@^5.7.0":
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/@fullcalendar/timegrid/-/timegrid-5.7.0.tgz#8c4d4ec305d8a3eeefe829adcacd7ca6e170c5fb"
-  integrity sha512-CTDkrqllYZyICd75MeGUJ45e4EC8SZsSwDN6DtUD5wPTfQW2j8vGX89iy/yEnhNUi8yzWe70St95vGFo1IeakQ==
-  dependencies:
-    "@fullcalendar/common" "~5.7.0"
-    "@fullcalendar/daygrid" "~5.7.0"
     tslib "^2.0.3"
 
 "@npmcli/move-file@^1.0.1":
@@ -3282,11 +3282,6 @@ fstream@^1.0.0, fstream@^1.0.12:
     inherits "~2.0.0"
     mkdirp ">=0.5 0"
     rimraf "2"
-
-fullcalendar@^5.7.0:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/fullcalendar/-/fullcalendar-5.7.0.tgz#b4b2ddb5f5aa1e6513cc2a4a64f66fe156bf1705"
-  integrity sha512-kOuzocipmY8o1oCVUSsKbv+eSqBbVpIZMUdxgramZPj7Rb4qs4GpVE7UgFt6kUQO6fC/CLazEpVfa3TUlSMkFA==
 
 function-bind@^1.1.1:
   version "1.1.1"
@@ -5991,6 +5986,11 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.14, postcss@^7.0.17, postcss@^7.0.2
     chalk "^2.4.2"
     source-map "^0.6.1"
     supports-color "^6.1.0"
+
+preact@^10.0.5:
+  version "10.5.13"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.13.tgz#85f6c9197ecd736ce8e3bec044d08fd1330fa019"
+  integrity sha512-q/vlKIGNwzTLu+jCcvywgGrt+H/1P/oIRSD6mV4ln3hmlC+Aa34C7yfPI4+5bzW8pONyVXYS7SvXosy2dKKtWQ==
 
 prepend-http@^1.0.0:
   version "1.0.4"
