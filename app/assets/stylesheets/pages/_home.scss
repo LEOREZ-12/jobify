@@ -98,11 +98,12 @@ h4 {
 
 .circleBase {
   border-radius: 50%;
+  border: 1px solid $j-dark-blue;
 }
 
 .type2 {
-  width: 10px;
-  height: 10px;
+  width: 22px;
+  height: 22px;
   background: white;
   color: $j-dark-blue;
 }
