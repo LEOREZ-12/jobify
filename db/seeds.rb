@@ -215,9 +215,6 @@ step_b = Step.new({ name: "Candidature envoyée", apply: apply_a, date: "2021-05
   })
 step_b.save!
 
-step_c = Step.new({ name: "Echange téléphonique", apply: apply_a, date: "2021-05-12"
-})
-step_c.save!
 
 #apply_b
 step_d = Step.new({ name: "A postuler", apply: apply_b, date: "2021-05-09"
