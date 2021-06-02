@@ -65,3 +65,33 @@ a:hover {
 .search-form-control .form-control {
   border-radius: 50px;
 }
+
+h4 {
+  text-decoration: none;
+  color: #8A9CA3;
+}
+
+.nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
+  border-color: white ;
+  border-top-color: white;
+  border-right-color:white;
+  border-bottom-color: #06AED5;
+  border-bottom-style: solid;
+  h4 {
+    text-decoration: none;
+    color: #06AED5;
+  }
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+  color: #06AED5;
+  background-color: white;
+  border-color: white ;
+  border-top-color: white;
+  border-right-color:white;
+  border-bottom-color: $j-dark-blue;
+  h4 {
+    text-decoration: none;
+    color: $j-dark-blue;
+  }
+}
