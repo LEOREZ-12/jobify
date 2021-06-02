@@ -33,28 +33,28 @@
   <div class="tab-pane fade show active" id="candidatures" role="tabpanel" aria-labelledby="candidatures-tab">
   
     <div class="dash-category d-flex justify-content-start align-items-center pb-3 pr-2">
-      <%= link_to applies_path, class: "filtre-balise mr-3 #{ !@status ? 'active' : '' }" do %>
+      <%= link_to applies_path, class: "filtre-balise mr-3 d-flex #{ !@status ? 'active' : '' }" do %>
         <span>Toutes</span>
-        <span><%= @allapplies_user.count %></span>
+        <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @allapplies_user.count %></span></div>
       <% end %>
 
-      <%= link_to applies_path(params: { status: 'Entretien' }), class: "filtre-balise mx-3 #{ @status == 'Entretien' ? 'active' : '' }" do %>
+      <%= link_to applies_path(params: { status: 'Entretien' }), class: "filtre-balise mx-3 d-flex #{ @status == 'Entretien' ? 'active' : '' }" do %>
         <span>Entretiens à préparer</span>
-        <span><%= @entretiens.count %></span>
+        <div class="circleBase type2 text-center"><span><%= @entretiens.count %></span></div>
       <% end %>
 
       <%= link_to applies_path(params: { status: 'A postuler' }), class: "filtre-balise mx-3 #{ @status == 'A postuler' ? 'active' : '' }" do %>
         <span>Candidatures à envoyer</span>
-        <span><%= @candidatures.count %></span>
+        <div class="circleBase type2"><span><%= @candidatures.count %></span></div>
       <% end %>
 
       <%= link_to applies_path(params: { status: 'Proposition à recevoir' }), class: "filtre-balise mx-3 #{ @status == 'Proposition à recevoir' ? 'active' : '' }" do %>
         <span>Propositions à recevoir</span>
-        <span><%= @propositions.count %></span>
+        <div class="circleBase type2"><span><%= @propositions.count %></span></div>
       <% end %>
       <%= link_to applies_path(params: { status: 'Refus' }), class: "filtre-balise mx-3 #{ @status == 'Refus' ? 'active' : '' }" do %>
         <span>Refusées</span>
-        <span><%= @refusees.count %></span>
+        <div class="circleBase type2"><span><%= @refusees.count %></span></div>
       <% end %>
     </div>
 
@@ -92,61 +92,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <div class="d-flex align-items-center justify-content-between" >
-
-
-
-
-
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="candidatures" role="tabpanel" aria-labelledby="candidatures-tab">
-
-        
-      </div>
-        <div class="tab-pane fade" id="calendrier" role="tabpanel" aria-labelledby="calendrier-tab">...</div>
-        <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">...</div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="">
-    <% @applies.each do |apply| %>
-      <%= link_to apply_path(apply) do %>
-        <div class="container-offer pt-4">
-          <div class="card-offer">
-            <%= cl_image_tag apply.offer.company_logo.key, height: 300, width: 400 %>
-            <div class="card-dispatch">
-              <div class="card-offer-infos">
-                <h5><%= apply.offer.company_name %></h5>
-                <h3><%= apply.offer.job_title %></h3>
-                <p>CDI<span class="mx-2">•</span>
-                <%= apply.offer.company_city %><span class="mx-2">•</span>
-                Publié le <%= I18n.l(apply.offer.publish_date, format: " %d/%m/%Y") %><span class="mx-2">•</span>
-                il y a <%= time_ago_in_words(apply.offer.publish_date) %></p>
-              </div>
-            </div>
-            <h2 class="status-label status-label-index <%= apply.status %>"> <%= apply.status %></h2>
-            <div class="money"><i class="unique fas fa-coins"></i><strong><%= apply.offer.salary %></strong> k €</div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
-  <br>   
-  </div>
-</div>
-
