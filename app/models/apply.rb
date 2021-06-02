@@ -21,6 +21,7 @@ class Apply < ApplicationRecord
   def content_for_fullcalendar
     {
       title: status,
+      classNames: [status.downcase.gsub(' ', '-')],
       start: steps.last.date
     }
   end
