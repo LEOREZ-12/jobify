@@ -1,4 +1,36 @@
 #calendar {
-  max-width: 1100px;
+  max-width: 1800px;
   margin: 40px auto;
+}
+
+button.fc-button.fc-prev-button.fc-button-primary,
+button.fc-button.fc-next-button.fc-button-primary {
+  background-color: white;
+  color: black;
+  border: none;
+}
+
+button.fc-today-button.fc-button.fc-button-primary {
+    background: #dedede;
+    color: black;
+    border: none;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.75em;
+  margin: 0;
+  color: rgb(57, 68, 72);
+}
+
+.fc .fc-col-header-cell-cushion {
+  display: inline-block;
+  padding: 2px 4px;
+  color: rgb(57, 68, 72);
+}
+
+.fc .fc-daygrid-day-number {
+  position: relative;
+  z-index: 4;
+  padding: 4px;
+  color: rgb(57, 68, 72);
 }
