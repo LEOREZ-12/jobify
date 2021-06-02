@@ -89,11 +89,11 @@
         <%= column_chart @applies.group(:status).count, colors: ["#06AED5", "#F35B04"], label: "Value", height: "380px" %>
       </div>
     </div>
-    <div class="dash-chart">
+    <%# <div class="dash-chart">
       <%= bar_chart @applies.group(:status).count(:status), colors: ["#06AED5", "#F35B04"], label: "Value", height: "380px" %>
-    </div>
+    <%# </div>
     <div class="dash-chart">
       <#%= bar_chart @applies.offer.company_name.group(:status), colors: ["#06AED5", "#F35B04"], label: "Value", height: "380px" %>
-    </div>
+    <%# </div>  %>
   </div>
 </div>
