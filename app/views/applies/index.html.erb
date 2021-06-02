@@ -86,16 +86,10 @@
         <div id='calendar' data-applies="<%= @applies_for_fullcalendar.to_json %>"></div>
       </div>
       <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
-        <%# <div class="dash-chart"> %>
-          <%#= column_chart @applies.group(:status).count, colors: ["#06AED5", "#F35B04"], label: "Value", height: "380px" %>
-        <%# </div> %>
+        <div class="dash-chart">
+        <%= line_chart Apply.group_by_week(:created_at, week_start: :monday).count %>
+        </div>
       </div>
     </div>
-    <%# <div class="dash-chart">
-      <%= bar_chart @applies.group(:status).count(:status), colors: ["#06AED5", "#F35B04"], label: "Value", height: "380px" %>
-    <%# </div>
-    <div class="dash-chart">
-      <#%= bar_chart @applies.offer.company_name.group(:status), colors: ["#06AED5", "#F35B04"], label: "Value", height: "380px" %>
-    <%# </div>  %>
   </div>
 </div>
