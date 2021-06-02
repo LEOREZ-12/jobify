@@ -1,67 +1,178 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The page you were looking for doesn't exist (404)</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>La page que vous recherchez n'existe plus (404)</title>
+  <meta>
   <style>
-  .rails-default-error-page {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-    margin: 0;
-  }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-  .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
-  }
+    html, body {
+        width: 100%;
+        height: 100%;
+    }
 
-  .rails-default-error-page div.dialog > div {
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 12% 0;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    body {
+        background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/257418/andy-holmes-698828-unsplash.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        min-width: 100vw;
+        font-family: "Roboto Mono", "Liberation Mono", Consolas, monospace;
+        color: rgba(255,255,255,.87);
+    }
 
-  .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-  .rails-default-error-page div.dialog > p {
-    margin: 0 0 1em;
-    padding: 1em;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    .container,
+    .container > .row,
+    .container > .row > div {
+      height: 100%;
+    }
+
+    #countUp {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .number {
+      font-size: 4rem;
+      font-weight: 500;
+    }
+    #countUp.number + .text {
+      margin: 0 0 1rem;
+      font-weight: 300;
+    }
+ 
+    #countUp.text {
+      font-weight: 300;
+      text-align: center;
+    }
+
+    html {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #2d3436;
+      background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+    }
+
+    #btn {
+      background: #222;
+      height: 50px;
+      min-width: 150px;
+      border: none;
+      border-radius: 10px;
+      color: #eee;
+      font-size: 40px;
+      font-family: 'Cookie', cursive;
+      position: relative;
+      transition: 1s;
+      -webkit-tap-highlight-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding-top: 5px;
+    }
+
+    #btn #circle {
+      width: 5px;
+      height: 5px;
+      background: transparent;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      overflow: hidden;
+      transition: 500ms;
+    }
+
+    .noselect {
+      -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+          -moz-user-select: none;
+            -ms-user-select: none;
+                user-select: none;
+    }
+
+    #btn:hover {
+      background: transparent;
+    }
+
+    #btn:hover #circle {
+      height: 50px;
+      width: 150px;
+      left: 0;
+      transform: translateX(50%);
+      border-radius: 0;
+      border-bottom: 2px solid #eee;
+    }
+ 
   </style>
 </head>
 
-<body class="rails-default-error-page">
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <div>
-      <h1>The page you were looking for doesn't exist.</h1>
-      <p>You may have mistyped the address or the page may have moved.</p>
-    </div>
-    <p>If you are the application owner check the logs for more information.</p>
-  </div>
-</body>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="xs-12 md-6 mx-auto">
+          <div id="countUp">
+            <div class="number" data-count="404">0</div>
+            <div class="text">Oops</div>
+            <div class="text">Il semble qu'un des collaborateurs n'a pas bien appris ses flashcards.</div>
+            <div class="text">Cliquez sur le logo pour vite revenir sur notre site ! </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+
+      <div id="btn"><span class="noselect">Revenir sur le site</span><div id="circle"></div></div>
+    </div>            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.3up.dk/in-view@0.6.1"></script>
+    <script>
+      var formatThousandsNoRounding = function(n, dp){
+        var e = '', s = e+n, l = s.length, b = n < 0 ? 1 : 0,
+            i = s.lastIndexOf(','), j = i == -1 ? l : i,
+            r = e, d = s.substr(j+1, dp);
+        while ( (j-=3) > b ) { r = '.' + s.substr(j, 3) + r; }
+        return s.substr(0, j + 3) + r + 
+          (dp ? ',' + d + ( d.length < dp ? 
+              ('00000').substr(0, dp - d.length):e):e);
+      };
+
+      var hasRun = false;
+
+      inView('#countUp').on('enter', function() {
+          if (hasRun == false) {
+              $('.number').each(function() {
+                  var $this = $(this),
+                      countTo = $this.attr('data-count');
+
+                  $({ countNum: $this.text()}).animate({
+                      countNum: countTo
+                  },
+                  {
+                      duration: 2000,
+                      easing:'linear',
+                      step: function() {
+                          $this.text(formatThousandsNoRounding(Math.floor(this.countNum)));
+                      },
+                      complete: function() {
+                          $this.text(formatThousandsNoRounding(this.countNum));
+                      }
+                  });
+              });
+              hasRun = true;
+          }
+      });
+    </script>
+  </body>
 </html>
