@@ -10,6 +10,7 @@ class AppliesController < ApplicationController
     @allapplies_user = current_user.applies
     @entretiens = Apply.where(user: current_user && "status" == "Entretien")
     @entretiens = @allapplies_user.where(status: "Entretien")
+    @echanges = @allapplies_user.where(status: "Echange téléphonique")
     @candidatures = @allapplies_user.where(status: "A postuler")
     @propositions = @allapplies_user.where(status: "Proposition à recevoir")
     @refusees = @allapplies_user.where("status LIKE :prefix", prefix: "Refus%")
@@ -19,7 +20,6 @@ class AppliesController < ApplicationController
 
     @applies_for_fullcalendar = @applies.map { |apply| apply.content_for_fullcalendar }
     # @applies_for_fullcalendar = @applies.map(&:content_for_fullcalendar)
-
 
     @status = params[:status]
 
@@ -34,6 +34,7 @@ class AppliesController < ApplicationController
   end
 
   private
+
   def transform_status(status)
     if status == "A postuler"
       "a_postuler"
