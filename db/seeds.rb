@@ -35,7 +35,7 @@ puts "Creating offers..."
   })
 
   logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622035931/blablacar.svg')
-  banner = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622189287/banner-bla.jpg')
+  banner = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622621993/new-banner-bla_cdkrdl.jpg')
   blablacar.company_logo.attach(io: logo, filename: 'blablacar.svg', content_type: 'image/svg')
   blablacar.banner.attach(io: banner, filename: 'blablacar_banner.jpg', content_type: 'image/jpg')
   blablacar.save!
@@ -57,7 +57,7 @@ puts "Creating offers..."
                 company_street: "12 Rue d'Athènes", company_city: "Paris", company_zipcode: "75009", publish_date: "2021-05-09",
                 job_description: "En tant que Product Owner, vous avez pour mission de développer les produits Deezer au sein d’une équipe agile, en lien avec le Chef de Produit.",
                 glassdoor_rate: 4, recruiter_name: "Paul LEFEVRE", recruiter_email: "paul.lefevre@deezer.fr", recruiter_phone_number: "06 05 04 03 02",
-                salary: 45, created_at: "2021-05-09", updated_at: "2021-05-12"
+                salary: 55, created_at: "2021-05-09", updated_at: "2021-05-12"
   })
 
   logo = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622034727/deezer.svg')
@@ -147,7 +147,7 @@ apply_b = Apply.new({ user: nicolas, offer: back_market, application_date: "2021
 apply_b.save!
 
 apply_c = Apply.new({ user: nicolas, offer: deezer, application_date: "2021-05-12", created_at: "2021-05-20", updated_at: "2021-05-20",
-              status: "Entretien", salary_expectation: "49"
+              status: "Refus du candidat", salary_expectation: "49"
 })
 apply_c.save!
 
@@ -235,17 +235,13 @@ step_g = Step.new({ name: "Echange téléphonique", apply: apply_a, date: "2021-
 })
 step_g.save!
 
-step_h = Step.new({ name: "Proposition à recevoir", apply: apply_c, date: "2021-05-03"
+step_h = Step.new({ name: "Proposition à recevoir", apply: apply_c, date: "2021-05-21"
   })
 step_h.save!
 
-step_i = Step.new({ name: "Refus du candidat", apply: apply_c, date: "2021-05-14"
+step_i = Step.new({ name: "Refus du recruteur", apply: apply_c, date: "2021-05-28"
   })
 step_i.save!
-
-step_j = Step.new({ name: "A postuler", apply: apply_c, date: "2021-06-01"
-  })
-step_j.save!
 
 step_k = Step.new({ name: "A postuler", apply: apply_i, date: "2021-05-05"
   })
