@@ -4,7 +4,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.apply = @apply
     @comment.save
-    redirect_to apply_path(@apply)
+    if @comment.save
+      redirect_to apply_path(@apply, anchor: "anchor-comment")
+    else
+      redirect_to apply_path(@apply)
+    end
   end
 
   private
