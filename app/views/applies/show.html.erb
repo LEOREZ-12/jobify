@@ -20,7 +20,7 @@
 <div class="color-container bg-grey">
   <div class="container-show">
     <div class="container-step mt-4">
-      <div class="d-flex justify-content-between">
+      <div id="anchor-step" class="d-flex justify-content-between">
         <div class="pt-3 mx-3">
           <h3 id="step-font"> Etape en cours :<span class="mx-2"></span>
           <% if @apply.steps.present? %>
@@ -72,7 +72,7 @@
             <% end %>
           </ul>
         </div>
-         <div class="comments-notes d-flex p-4 flex-column mb-4 ">
+         <div id="anchor-comment" class="comments-notes d-flex p-4 flex-column mb-4 ">
           <h6><strong class="blue-title">Vos notes</strong></h6>
           <hr>
           <%= simple_form_for Comment.new, url: apply_comments_path(@apply), method: :post, html: { class: 'w-100' } do |f| %>
@@ -81,7 +81,7 @@
               <%= f.submit "Ajouter", class: "btn btn-flat rounded-pill" %>
             </div>
           <% end %>
-          <div class="d-flex flex-column w-100">
+          <div  class="d-flex flex-column w-100">
             <% @apply.comments.order(created_at: :desc).each do |comment|%>
               <p class="mb-2"><%= comment.created_at.strftime("%d/%m/%Y") %> - <%= comment.content %></p>
             <% end %>

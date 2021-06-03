@@ -4,7 +4,11 @@ class StepsController < ApplicationController
     @step = Step.new(steps_params)
     @step.apply = @apply
     @step.save
-    redirect_to apply_path(@apply)
+    if @step.save
+      redirect_to apply_path(@apply, anchor: "anchor-step")
+    else
+      redirect_to apply_path(@apply)
+    end
   end
 
   def update

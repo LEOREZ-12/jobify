@@ -15,6 +15,7 @@ module Jobify
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.action_view.embed_authenticity_token_in_remote_forms = true
 
     config.i18n.default_locale = :fr
     # Settings in config/environments/* take precedence over those specified here.
