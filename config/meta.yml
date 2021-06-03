@@ -1,8 +1,6 @@
 meta_product_name: "Jobify"
 meta_title: "Jobify | Ton coach en recherche d'emploi"
 meta_description: "Rechercher un job n'a jamais été aussi facile ! Avec Jobify retrouve toutes les informations de tes candidatures en 1 click, l'annonce sauvegardée, un historique de toutes les étapes."
-meta_image: "logo.png" # should exist in `app/assets/images/`
+meta_image: "og-image.jpg" # should exist in `app/assets/images/`
 twitter_account: "@Lewagonparis"   # required for Twitter Cards
-
-
 
