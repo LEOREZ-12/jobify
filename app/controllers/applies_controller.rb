@@ -24,12 +24,11 @@ class AppliesController < ApplicationController
     @status = params[:status]
 
     if params[:query].present?
-      @applies = @applies.search_by_company_name(params[:query])
+      @applies = @applies.search_by_company_name(params[:query]).order(:updated_at)
     elsif params.dig(:status) == "reminder"
-
-      @applies = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day)
+      @applies = @allexceptdeclined.where("DATE(updated_at) >= ?", Date.today - 7.day).order(:updated_at)
     elsif params.dig(:status)
-      @applies = @applies.where("status LIKE :prefix", prefix: "#{params[:status]}%")
+      @applies = @applies.where("status LIKE :prefix", prefix: "#{params[:status]}%").order(:updated_at)
     end
   end
 
