@@ -9,8 +9,8 @@ User.destroy_all
 
 puts "Creating user..."
 
-  nicolas = User.new({ email: "nicolas@gmail.com", password: "aaaaaa",
-  first_name: "Nicolas", last_name: "Sarkozy", address: "84 Avenue de la République, Paris"
+  nicolas = User.new({ email: "nicolas@gmail.com", password: "Jobify590",
+  first_name: "Nicolas", last_name: "Dupont", address: "84 Avenue de la République, Paris"
   })
   file = URI.open('https://res.cloudinary.com/bsm/image/upload/v1622041241/sarko.jpg')
   nicolas.photo_avatar.attach(io: file, filename: 'sarko.jpg', content_type: 'image/jpg')
@@ -136,37 +136,32 @@ puts "Offers finished!"
 
 # APPLIES
 
-apply_a = Apply.new({ user: nicolas, offer: blablacar, application_date: "2021-05-07", created_at: "2021-05-07", updated_at: "2021-05-07",
-              status: "Candidature envoyée", salary_expectation: "52"
-})
-apply_a.save!
-
-apply_b = Apply.new({ user: nicolas, offer: back_market, application_date: "2021-05-14", created_at: "2021-05-16", updated_at: "2021-05-16",
+apply_b = Apply.new({ user: nicolas, offer: back_market, application_date: "2021-05-23", created_at: "2021-05-23", updated_at: "2021-05-23",
               status: "Echange téléphonique", salary_expectation: "53"
 })
 apply_b.save!
 
-apply_c = Apply.new({ user: nicolas, offer: deezer, application_date: "2021-05-12", created_at: "2021-05-20", updated_at: "2021-05-20",
+apply_c = Apply.new({ user: nicolas, offer: deezer, application_date: "2021-05-26", created_at: "2021-05-26", updated_at: "2021-05-26",
               status: "Refus du candidat", salary_expectation: "49"
 })
 apply_c.save!
 
-apply_d = Apply.new({ user: nicolas, offer: mano_mano, application_date: "2021-05-12", created_at: "2021-05-30", updated_at: "2021-05-31",
+apply_d = Apply.new({ user: nicolas, offer: mano_mano, application_date: "2021-05-18", created_at: "2021-05-18", updated_at: "2021-05-18",
               status: "Proposition à recevoir", salary_expectation: "50"
 })
 apply_d.save!
 
-apply_e = Apply.new({ user: nicolas, offer: alan, application_date: "2021-05-22", created_at: "2021-05-11", updated_at: "2021-05-11",
+apply_e = Apply.new({ user: nicolas, offer: alan, application_date: "2021-05-22", created_at: "2021-05-22", updated_at: "2021-05-22",
               status: "Entretien", salary_expectation: "55"
 })
 apply_e.save!
 
-apply_f = Apply.new({ user: nicolas, offer: ab_tasty, application_date: "2021-05-21", created_at: "2021-05-03", updated_at: "2021-05-03",
+apply_f = Apply.new({ user: nicolas, offer: ab_tasty, application_date: "2021-05-21", created_at: "2021-05-21", updated_at: "2021-05-21",
               status: "Echange téléphonique", salary_expectation: "50"
 })
 apply_f.save!
 
-apply_g = Apply.new({ user: nicolas, offer: qonto, application_date: "2021-05-22", created_at: "2021-05-07", updated_at: "2021-05-07",
+apply_g = Apply.new({ user: nicolas, offer: qonto, application_date: "2021-05-22", created_at: "2021-05-22", updated_at: "2021-05-22",
               status: "A postuler", salary_expectation: ""
 })
 apply_g.save!
@@ -176,23 +171,171 @@ apply_h = Apply.new({ user: nicolas, offer: deezer_b, application_date: "2021-05
 })
 apply_h.save!
 
-apply_i = Apply.new({ user: nicolas, offer: qonto, application_date: "2021-05-03", created_at: "2021-05-03", updated_at: "2021-05-03",
+apply_i = Apply.new({ user: nicolas, offer: qonto, application_date: "2021-05-15", created_at: "2021-05-15", updated_at: "2021-05-15",
               status: "Proposition à recevoir", salary_expectation: ""
 })
 apply_i.save!
+
+apply_a = Apply.new({ user: nicolas, offer: blablacar, application_date: "2021-05-07", created_at: "2021-05-07", updated_at: "2021-05-07",
+              status: "Candidature envoyée", salary_expectation: "52"
+})
+apply_a.save!
+
+# Apply 1
+apply_1 = Apply.new({ user: nicolas, offer: back_market, application_date: "2021-05-10", created_at: "2021-05-10", updated_at: "2021-05-10",
+              status: "Candidature envoyée", salary_expectation: "56"
+})
+apply_1.save!
+
+step_1_1 = Step.new({ name: "A postuler", apply: apply_1, date: "2021-05-10"
+  })
+step_1_1.save!
+
+step_1_2 = Step.new({ name: "Candidature envoyée", apply: apply_1, date: "2021-05-12"
+  })
+step_1_2.save!
+
+# Apply 2
+apply_2 = Apply.new({ user: nicolas, offer: mano_mano, application_date: "2021-05-26", created_at: "2021-05-26", updated_at: "2021-05-26",
+              status: "Candidature envoyée", salary_expectation: "56"
+})
+apply_2.save!
+
+step_2_1 = Step.new({ name: "A postuler", apply: apply_2, date: "2021-05-26"
+  })
+step_2_1.save!
+
+step_2_2 = Step.new({ name: "Candidature envoyée", apply: apply_2, date: "2021-05-28"
+  })
+step_2_2.save!
+
+# Apply 3
+apply_3 = Apply.new({ user: nicolas, offer: alan, application_date: "2021-05-24", created_at: "2021-05-24", updated_at: "2021-05-24",
+              status: "Candidature envoyée", salary_expectation: "51"
+})
+apply_3.save!
+
+step_3_1 = Step.new({ name: "A postuler", apply: apply_3, date: "2021-05-24"
+  })
+step_3_1.save!
+
+step_3_2 = Step.new({ name: "Candidature envoyée", apply: apply_3, date: "2021-05-25"
+  })
+step_3_2.save!
+
+# Apply 4
+apply_4 = Apply.new({ user: nicolas, offer: ab_tasty, application_date: "2021-05-24", created_at: "2021-05-24", updated_at: "2021-05-24",
+              status: "Candidature envoyée", salary_expectation: "51"
+})
+apply_4.save!
+
+step_4_1 = Step.new({ name: "A postuler", apply: apply_4, date: "2021-05-24"
+  })
+step_4_1.save!
+
+step_4_2 = Step.new({ name: "Candidature envoyée", apply: apply_4, date: "2021-05-25"
+  })
+step_4_2.save!
+
+# Apply 5
+apply_5 = Apply.new({ user: nicolas, offer: ab_tasty, application_date: "2021-05-24", created_at: "2021-05-24", updated_at: "2021-05-24",
+              status: "Refus du recruteur", salary_expectation: "51"
+})
+apply_5.save!
+
+step_5_1 = Step.new({ name: "A postuler", apply: apply_5, date: "2021-05-24"
+  })
+step_5_1.save!
+
+step_5_2 = Step.new({ name: "Candidature envoyée", apply: apply_5, date: "2021-05-25"
+  })
+step_5_2.save!
+
+step_5_3 = Step.new({ name: "Refus du recruteur", apply: apply_5, date: "2021-06-01"
+  })
+step_5_3.save!
+
+# Apply 6
+apply_6 = Apply.new({ user: nicolas, offer: qonto, application_date: "2021-05-31", created_at: "2021-05-31", updated_at: "2021-05-31",
+              status: "Refus du recruteur", salary_expectation: "51"
+})
+apply_6.save!
+
+step_6_1 = Step.new({ name: "A postuler", apply: apply_6, date: "2021-05-31"
+  })
+step_6_1.save!
+
+step_6_2 = Step.new({ name: "Candidature envoyée", apply: apply_6, date: "2021-06-01"
+  })
+step_6_2.save!
+
+step_6_3 = Step.new({ name: "Refus du recruteur", apply: apply_6, date: "2021-06-02"
+  })
+step_6_3.save!
+
+# Apply 7
+apply_7 = Apply.new({ user: nicolas, offer: ab_tasty, application_date: "2021-05-31", created_at: "2021-05-31", updated_at: "2021-05-31",
+              status: "Candidature envoyée", salary_expectation: "51"
+})
+apply_7.save!
+
+step_7_1 = Step.new({ name: "A postuler", apply: apply_7, date: "2021-05-31"
+  })
+step_7_1.save!
+
+step_7_2 = Step.new({ name: "Candidature envoyée", apply: apply_7, date: "2021-06-01"
+  })
+step_7_2.save!
+
+# Apply 8
+apply_8 = Apply.new({ user: nicolas, offer: mano_mano, application_date: "2021-05-31", created_at: "2021-05-31", updated_at: "2021-05-31",
+              status: "Candidature envoyée", salary_expectation: "51"
+})
+apply_8.save!
+
+step_8_1 = Step.new({ name: "A postuler", apply: apply_8, date: "2021-05-31"
+  })
+step_8_1.save!
+
+step_8_2 = Step.new({ name: "Candidature envoyée", apply: apply_8, date: "2021-06-01"
+  })
+step_8_2.save!
+
+# Apply 9
+apply_9 = Apply.new({ user: nicolas, offer: deezer, application_date: "2021-06-02", created_at: "2021-06-02", updated_at: "2021-06-02",
+              status: "Candidature envoyée", salary_expectation: "51"
+})
+apply_9.save!
+
+step_9_1 = Step.new({ name: "A postuler", apply: apply_9, date: "2021-06-02"
+  })
+step_9_1.save!
+
+step_9_2 = Step.new({ name: "Candidature envoyée", apply: apply_9, date: "2021-06-03"
+  })
+step_9_2.save!
+
+# Apply 10
+apply_10 = Apply.new({ user: nicolas, offer: back_market, application_date: "2021-06-02", created_at: "2021-06-02", updated_at: "2021-06-02",
+              status: "Candidature envoyée", salary_expectation: "51"
+})
+apply_10.save!
+
+step_10_1 = Step.new({ name: "A postuler", apply: apply_10, date: "2021-06-02"
+  })
+step_10_1.save!
+
+step_10_2 = Step.new({ name: "Candidature envoyée", apply: apply_10, date: "2021-06-03"
+  })
+step_10_2.save!
 
 puts "Applies finished!"
 
 # COMMENT
 
-
-comment_a = Comment.new({ content: "Poste intéressant, se renseigner sur Victoire à qui je serai rattaché et les locaux sont canons !!!", apply: apply_a, created_at: "2021-05-10", updated_at: "2021-05-10"
+comment_a = Comment.new({ content: "Poste intéressant, se renseigner sur Victoire à qui je serai rattaché", apply: apply_a, created_at: "2021-05-10", updated_at: "2021-05-10"
   })
 comment_a.save!
-
-comment_b = Comment.new({ content: "Echange avec le recruteur, process de recrutement en 3 entretiens: RH, Manager, C-levels", apply: apply_a, created_at: "2021-05-12", updated_at: "2021-05-12"
-  })
-comment_b.save!
 
 comment_c = Comment.new({ content: "Echange avec le recruteur, process de recrutement en 3 entretiens: RH, Manager, C-levels", apply: apply_c, created_at: "2021-05-12", updated_at: "2021-05-12"
   })
@@ -217,98 +360,98 @@ step_b.save!
 
 
 #apply_b
-step_d = Step.new({ name: "A postuler", apply: apply_b, date: "2021-05-09"
+step_d = Step.new({ name: "A postuler", apply: apply_b, date: "2021-05-23"
   })
 step_d.save!
 
-step_e = Step.new({ name: "Candidature envoyée", apply: apply_b, date: "2021-05-12"
+step_e = Step.new({ name: "Candidature envoyée", apply: apply_b, date: "2021-05-24"
   })
 step_e.save!
 
-step_f = Step.new({ name: "Echange téléphonique", apply: apply_b, date: "2021-05-14"
+step_f = Step.new({ name: "Echange téléphonique", apply: apply_b, date: "2021-06-01"
   })
 step_f.save!
 
-step_g = Step.new({ name: "Entretien", apply: apply_b, date: "2021-05-19"
+step_g = Step.new({ name: "Entretien", apply: apply_b, date: "2021-06-08"
   })
 step_g.save!
 
 #apply_c
-step_h = Step.new({ name: "A postuler", apply: apply_c, date: "2021-05-16"
+step_h = Step.new({ name: "A postuler", apply: apply_c, date: "2021-05-26"
   })
 step_h.save!
 
-step_i = Step.new({ name: "Candidature envoyée", apply: apply_c, date: "2021-05-17"
+step_i = Step.new({ name: "Candidature envoyée", apply: apply_c, date: "2021-06-02"
   })
 step_i.save!
 
-step_j = Step.new({ name: "Refus du recruteur", apply: apply_c, date: "2021-05-21"
+step_j = Step.new({ name: "Refus du recruteur", apply: apply_c, date: "2021-06-03"
   })
 step_j.save!
 
 #apply_d
-step_k = Step.new({ name: "A postuler", apply: apply_d, date: "2021-05-16"
+step_k = Step.new({ name: "A postuler", apply: apply_d, date: "2021-05-18"
   })
 step_k.save!
 
 #apply_e
-step_l = Step.new({ name: "A postuler", apply: apply_e, date: "2021-05-18"
+step_l = Step.new({ name: "A postuler", apply: apply_e, date: "2021-05-22"
   })
 step_l.save!
 
 #apply_f
-step_m = Step.new({ name: "A postuler", apply: apply_f, date: "2021-05-19"
+step_m = Step.new({ name: "A postuler", apply: apply_f, date: "2021-05-21"
   })
 step_m.save!
 
-step_n = Step.new({ name: "Candidature envoyée", apply: apply_f, date: "2021-05-20"
+step_n = Step.new({ name: "Candidature envoyée", apply: apply_f, date: "2021-05-24"
   })
 step_n.save!
 
-step_o = Step.new({ name: "Entretien", apply: apply_f, date: "2021-06-01"
+step_o = Step.new({ name: "Entretien", apply: apply_f, date: "2021-05-31"
   })
 step_o.save!
 
-step_p = Step.new({ name: "Proposition à recevoir", apply: apply_f, date: "2021-06-04"
+step_p = Step.new({ name: "Proposition à recevoir", apply: apply_f, date: "2021-06-01"
   })
 step_p.save!
 
 #apply_g
-step_q = Step.new({ name: "A postuler", apply: apply_g, date: "2021-05-18"
+step_q = Step.new({ name: "A postuler", apply: apply_g, date: "2021-05-22"
   })
 step_q.save!
 
-step_r = Step.new({ name: "Candidature envoyée", apply: apply_g, date: "2021-05-20"
+step_r = Step.new({ name: "Candidature envoyée", apply: apply_g, date: "2021-05-25"
   })
 step_r.save!
 
-step_s = Step.new({ name: "Entretien", apply: apply_g, date: "2021-05-31"
+step_s = Step.new({ name: "Entretien", apply: apply_g, date: "2021-06-10"
   })
 step_s.save!
 
 #apply_h
-step_t = Step.new({ name: "A postuler", apply: apply_h, date: "2021-05-18"
+step_t = Step.new({ name: "A postuler", apply: apply_h, date: "2021-05-31"
   })
 step_t.save!
 
-step_u = Step.new({ name: "Candidature envoyée", apply: apply_h, date: "2021-05-20"
+step_u = Step.new({ name: "Candidature envoyée", apply: apply_h, date: "2021-06-02"
   })
 step_u.save!
 
-step_v = Step.new({ name: "Entretien", apply: apply_h, date: "2021-05-26"
+step_v = Step.new({ name: "Entretien", apply: apply_h, date: "2021-06-14"
   })
 step_v.save!
 
 #apply_i
-step_w = Step.new({ name: "A postuler", apply: apply_i, date: "2021-05-22"
+step_w = Step.new({ name: "A postuler", apply: apply_i, date: "2021-05-15"
   })
 step_w.save!
 
-step_x = Step.new({ name: "Candidature envoyée", apply: apply_i, date: "2021-05-24"
+step_x = Step.new({ name: "Candidature envoyée", apply: apply_i, date: "2021-05-17"
   })
 step_x.save!
 
-step_y = Step.new({ name: "Entretien", apply: apply_i, date: "2021-05-28"
+step_y = Step.new({ name: "Entretien", apply: apply_i, date: "2021-06-25"
   })
 step_y.save!
 
