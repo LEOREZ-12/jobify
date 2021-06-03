@@ -97,8 +97,9 @@
         <div id='calendar' data-applies="<%= @applies_for_fullcalendar.to_json %>"></div>
       </div>
       <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">
+      <h2 class="chart-title">Evolution de mes candidatures</h2>
         <div class="dash-chart">
-        <%= line_chart Apply.group_by_week(:created_at, week_start: :monday).count %>
+        <%= line_chart Apply.group_by_week(:created_at, week_start: :monday, format: "%d %B").count, ytitle: "Mes candidatures (par semaine)", width: "1140px", height: "475px", colors: ["#F25B05"], label: "Value", dataset: {borderWidth: 3} %>
         </div>
       </div>
     </div>
