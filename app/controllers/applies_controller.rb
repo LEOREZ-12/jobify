@@ -16,6 +16,7 @@ class AppliesController < ApplicationController
     @refusees = @allapplies_user.where("status LIKE :prefix", prefix: "Refus%")
     @allexceptdeclined = @allapplies_user.where("status NOT LIKE :prefix", prefix: "Refus%")
     @reminders = @allexceptdeclined.where("DATE(application_date) < ?", Date.today - 14.day)
+
     @applies = current_user.applies
 
     @applies_for_fullcalendar = @applies.map { |apply| apply.content_for_fullcalendar }

@@ -102,15 +102,14 @@ a.btn.btn-outline-warning.mt-3.mx-2.rounded-pill {
 
 .card-company {
   overflow: hidden;
-  // min-height: 380px;
-  // min-width: 300px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
   padding: 30px 20px;
-  color: $j-gray11;
+  color: #1F2D32;
   min-height: 450px;
   min-width: 300px;
+  width: 100%;
 }
 
 .card-candidature {
@@ -153,6 +152,13 @@ i.fas.fa-plus-circle {
 
 i.fas {
   color: #9cbcc7;
+}
+
+i.far.fa-times-circle {
+  position: absolute;
+  left: 340px;
+  top: 20px;
+  color: #086788;
 }
 
 i.far.fa-calendar-alt {
@@ -214,7 +220,7 @@ label.select.optional {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 800px;
+  min-width: 800px;
   border-radius: 5px;
   color: $j-gray11;
 }
