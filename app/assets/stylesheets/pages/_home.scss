@@ -27,6 +27,7 @@
 }
 
 .page-container {
+  padding-top: 50px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: 80px;
@@ -40,6 +41,7 @@
 .home-cards {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 60px;
 }
 
 .core-value {
@@ -108,33 +110,26 @@ h4 {
   color: $j-dark-blue;
 }
 
-.avatar-large-home {
-  width: 56px;
-  border-radius: 50%;
-}
-
 .home-reference {
   display: flex;
-  justify-content: space-around;
-  height: 50vh;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 220px;
 }
 
-.reference {
-  width: 30%;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.image-reference img {
+  height: 180px;
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-size: cover;
 }
 
-.reference > h4 {
+.text-reference h4 {
+  font-size: 24px;
   color: black;
+}
+
+.ref-banner {
+  background-color: #3788d840;
+  margin-bottom: -24px;
 }
