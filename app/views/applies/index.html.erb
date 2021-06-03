@@ -44,6 +44,11 @@
             <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @candidatures.count %></span></div>
           <% end %>
 
+          <%= link_to applies_path(params: { status: 'Echange téléphonique' }), class: "filtre-balise mx-3 d-flex align-items-center #{ @status == 'Echange téléphonique' ? 'active' : '' }" do %>
+            <span>Echanges tél.</span><span class="mr-2"></span>
+            <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @echanges.count %></span></div>
+          <% end %>
+
           <%= link_to applies_path(params: { status: 'Entretien' }), class: "filtre-balise mx-3 d-flex align-items-center #{ @status == 'Entretien' ? 'active' : '' }" do %>
             <span>Entretiens à préparer</span><span class="mr-2"></span>
             <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @entretiens.count %></span></div>
@@ -53,6 +58,12 @@
             <span>Propositions à recevoir</span><span class="mr-2"></span>
             <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @propositions.count %></span></div>
           <% end %>
+
+          <%= link_to applies_path(params: { status: 'reminder' }), class: "filtre-balise mx-3 d-flex align-items-center #{ @status == 'reminder' ? 'active' : '' }" do %>
+            <span>Relances</span><span class="mr-2"></span>
+            <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @reminders.count %></span></div>
+          <% end %>
+
           <%= link_to applies_path(params: { status: 'Refus' }), class: "filtre-balise mx-3 d-flex align-items-center #{ @status == 'Refus' ? 'active' : '' }" do %>
             <span>Refusées</span><span class="mr-2"></span>
             <div class="circleBase type2 text-center d-flex flex-column justify-content-center"><span><%= @refusees.count %></span></div>
