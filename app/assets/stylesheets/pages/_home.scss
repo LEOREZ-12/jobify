@@ -27,6 +27,7 @@
 }
 
 .page-container {
+  padding-top: 50px;
   padding-right: 15px;
   padding-left: 15px;
   margin-right: 80px;
@@ -40,6 +41,7 @@
 .home-cards {
   display: flex;
   justify-content: space-between;
+  padding-bottom: 60px;
 }
 
 .core-value {
@@ -106,4 +108,28 @@ h4 {
   height: 22px;
   background: white;
   color: $j-dark-blue;
+}
+
+.home-reference {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 220px;
+}
+
+.image-reference img {
+  height: 180px;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-size: cover;
+}
+
+.text-reference h4 {
+  font-size: 24px;
+  color: black;
+}
+
+.ref-banner {
+  background-color: #3788d840;
+  margin-bottom: -24px;
 }
